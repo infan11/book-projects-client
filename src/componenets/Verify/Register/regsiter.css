@@ -1,0 +1,29 @@
+.fromDiv  {
+  box-shadow: -1px 2px 5px 5px rgba(117, 116, 116, 0.117);
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  transition: box-shadow 0.2s ease-in-out;
+
+}
+.fromDiv:hover {
+    box-shadow: 0 0 20px rgba(3, 55, 168, 0.841); /* বক্সে গ্লো এফেক্ট */
+  }
+  
+.fromDiv:focus {
+    box-shadow: 30px 30px 20px rgba(3, 55, 168, 0.841); /* বক্সে গ্লো এফেক্ট */
+  }
+.formInput{
+    position: relative;
+    border: 1px solid #ccc; /* ইনপুট এলিমেন্টের বর্ডার */
+    box-shadow: 0 0 20px  rgba(0, 0, 0, 0.1); /* শ্যাডো */
+    border: none; /* বর্ডার মুছে ফেলুন */
+    border-bottom: 2px solid #ccc; /* নিচের বর্ডার মাত্রা */
+    outline: none;
+}
+
+
+.formInput:focus {
+    box-shadow: 15px 10px 20px rgba(0, 0, 0, 0.3); /* ফোকাস হলে শ্যাডো যোগ করুন */
+  }
+  
