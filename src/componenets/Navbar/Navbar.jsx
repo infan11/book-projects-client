@@ -1,12 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
- 
+
 
 const Navbar = () => {
    const navLinks = <>
   <NavLink
   to="/"
   className={({ isActive, isPending }) =>
-  `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : " text-green-500 "}`
+  `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : " text-blue-500 "}`
 }
 >
   HOME
@@ -14,7 +14,7 @@ const Navbar = () => {
 <NavLink
   to="/addBooks"
   className={({ isActive, isPending }) =>
-  `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : "text-green-500 "}`
+  `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : "text-blue-500 "}`
   }
 >
   ADDBOOKS
@@ -22,7 +22,7 @@ const Navbar = () => {
 <NavLink
   to="/allBooks"
   className={({ isActive, isPending }) =>
-  `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : "text-green-500 "}`
+  `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : "text-blue-500 "}`
   }
 >
   ALLBOOKS
@@ -30,10 +30,10 @@ const Navbar = () => {
 <NavLink
   to="/login"
   className={({ isActive, isPending }) =>
-  `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : "text-green-500 "}`
+  `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : "text-blue-500 "}`
   }
 >
-  SIGNUP
+  SIGNIN
 </NavLink>
     
    </>
