@@ -13,14 +13,14 @@ const Navbar = () => {
 >
   HOME
 </NavLink>
-{/* <NavLink
+<NavLink
   to="/addBooks"
   className={({ isActive, isPending }) =>
   `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : "text-blue-500 "}`
   }
 >
   ADDBOOKS
-</NavLink> */}
+// </NavLink>
 <NavLink
   to="/allBooks"
   className={({ isActive, isPending }) =>
