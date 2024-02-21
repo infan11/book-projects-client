@@ -1,7 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
 
 
 const Navbar = () => {
+  const {user} = useAuth()
    const navLinks = <>
   <NavLink
   to="/"
@@ -27,7 +29,9 @@ const Navbar = () => {
 >
   ALLBOOKS
 </NavLink>
-<NavLink
+
+    { user ? <>
+      <NavLink
   to="/login"
   className={({ isActive, isPending }) =>
   `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : "text-blue-500 "}`
@@ -35,7 +39,18 @@ const Navbar = () => {
 >
   SIGNIN
 </NavLink>
-    
+    </> :
+    <>
+    <NavLink
+  to="/signout"
+  className={({ isActive, isPending }) =>
+  `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : "text-blue-500 "}`
+  }
+>
+  SIGNOUT
+</NavLink>
+    </>
+    }
    </>
     return (
         <div>

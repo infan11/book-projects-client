@@ -1,11 +1,14 @@
 import image from '../../../assets/banner/login.jpg'
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import Swal from 'sweetalert2';
 const Login = () => {
  const {user, signIn , googleUser , githubUser } = useAuth();
+ const  navigate = useNavigate();
+const location = useLocation();
+const from = location.state?.from?.pathname || "/" ;
  const handleSubmit = e => {
    e.preventDefault();
    const form = e.target;
@@ -45,7 +48,11 @@ const Login = () => {
          },
          timer: "1500"
        });
+       
+        navigate(from , {replace : true})
      }
+    
+
    })
    .catch(error => {
       console.log(error)
@@ -94,7 +101,9 @@ const Login = () => {
          timer: "1500"
        });
      }
+     navigate(form , {replace : true})
    })
+   
    .catch(error => {
     console.log(error)
      if(error.code === "auth/network-request-failed"){

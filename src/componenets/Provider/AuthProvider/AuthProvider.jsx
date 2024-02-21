@@ -55,7 +55,8 @@ useEffect(() => {
        githubUser,
        signOut, 
        updateProfile,
-       logout
+       logout,
+       loading 
  }   
     return (
         <AuthContext.Provider  value={authInfo} >

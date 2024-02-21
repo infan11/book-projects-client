@@ -7,6 +7,7 @@ import AlllBoooks from "../componenets/AlllBooks/AllBooks/AlllBoooks";
 import BorrowedBooks from "../componenets/BorrowdBooks/BorrowedBooks/BorrowedBooks";
 import Login from "../componenets/Verify/Login/Login";
 import Register from "../componenets/Verify/Register/Register";
+import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
 export   const router = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ export   const router = createBrowserRouter([
         },
         {
             path: "/addBooks",
-            element: <AddBooks></AddBooks>
+            element: <PrivateRoutes><AddBooks></AddBooks></PrivateRoutes>
         },
         {
             path: "/allBooks",
