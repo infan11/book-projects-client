@@ -2,11 +2,13 @@
  import { FcGoogle } from "react-icons/fc";
  import { FaGithub } from "react-icons/fa";
 import './regsiter.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import Swal from 'sweetalert2';
 const Register = () => {
   const {user,  createUser , googleUser , githubUser } = useAuth();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/"
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
@@ -49,6 +51,7 @@ const Register = () => {
           timer: "1500"
         });
       }
+      navigate(from , {replace: true})
     })
     .catch(error => {
        console.log(error)
@@ -97,6 +100,7 @@ const Register = () => {
           timer: "1500"
         });
       }
+      navigate(from , {replace: true})
     })
     .catch(error => {
       console.log(error)
@@ -145,6 +149,7 @@ const Register = () => {
           timer: "1500"
         });
       }
+      navigate(from , {replace: true})
     })
     .catch(error => {
       console.log(error)

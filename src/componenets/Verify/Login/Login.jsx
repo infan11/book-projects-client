@@ -6,9 +6,6 @@ import useAuth from '../../Hooks/useAuth';
 import Swal from 'sweetalert2';
 const Login = () => {
  const {user, signIn , googleUser , githubUser } = useAuth();
- const  navigate = useNavigate();
-const location = useLocation();
-const from = location.state?.from?.pathname || "/" ;
  const handleSubmit = e => {
    e.preventDefault();
    const form = e.target;
@@ -101,7 +98,7 @@ const from = location.state?.from?.pathname || "/" ;
          timer: "1500"
        });
      }
-     navigate(form , {replace : true})
+   
    })
    
    .catch(error => {
