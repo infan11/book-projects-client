@@ -7,13 +7,13 @@ const PrivateRoutes = ({chlidren}) => {
     const location = useLocation(); 
  if(loading){
     return <ContentLoader
-    speed={2}
+    speed={1}
     width={400}
     height={160}
     viewBox="0 0 400 160"
-    backgroundColor="#f3f3f3"
+    backgroundColor="#f00"
     foregroundColor="#ecebeb"
-    {...props}
+   className=" md:max-w-7xl md:w-80 lg:w-full  lg:min-h-screen"
   >
     <rect x="48" y="8" rx="3" ry="3" width="88" height="6" /> 
     <rect x="48" y="26" rx="3" ry="3" width="52" height="6" /> 
