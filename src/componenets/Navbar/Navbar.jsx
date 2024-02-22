@@ -20,7 +20,7 @@ const Navbar = () => {
   }
 >
   ADDBOOKS
-// </NavLink>
+ </NavLink>
 <NavLink
   to="/allBooks"
   className={({ isActive, isPending }) =>
@@ -32,22 +32,23 @@ const Navbar = () => {
 
     { user ? <>
       <NavLink
+      to={"/login"}
+  className={({ isActive, isPending }) =>
+  `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : "text-blue-500 "}`
+  }
+>
+  SIGNOUT
+</NavLink>
+    </> :
+    <>
+   
+<NavLink
   to="/login"
   className={({ isActive, isPending }) =>
   `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : "text-blue-500 "}`
   }
 >
   SIGNIN
-</NavLink>
-    </> :
-    <>
-    <NavLink
-  to="/signout"
-  className={({ isActive, isPending }) =>
-  `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : "text-blue-500 "}`
-  }
->
-  SIGNOUT
 </NavLink>
     </>
     }
