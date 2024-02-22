@@ -53,7 +53,7 @@ const Navbar = () => {
    </>
     return (
         <div>
-            <div className="navbar  lg:w-full  md:w-80  shadow-2xl lg:px-10">
+            <div className="navbar    lg:w-full  md:w-80  shadow-2xl lg:px-10">
             <div className="navbar ">
             <div className="navbar ">
     <div className="dropdown">

@@ -2,7 +2,7 @@ import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../../componenets/Hooks/useAuth";
 import ContentLoader from "react-content-loader";
 
-const PrivateRoutes = ({chlidren}) => {
+const PrivateRoutes = ({children}) => {
     const { user , loading } = useAuth();
     const location = useLocation(); 
  if(loading){
@@ -11,7 +11,7 @@ const PrivateRoutes = ({chlidren}) => {
     width={400}
     height={160}
     viewBox="0 0 400 160"
-    backgroundColor="#f00"
+    backgroundColor="#ecebeb"
     foregroundColor="#ecebeb"
    className=" md:max-w-7xl md:w-80 lg:w-full  lg:min-h-screen"
   >
@@ -26,7 +26,7 @@ const PrivateRoutes = ({chlidren}) => {
  if(!user){
   return <Navigate to={"/login"} state={{from: location}} replace></Navigate>
  } 
- return chlidren
+ return children
 
   
 };
