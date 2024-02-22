@@ -7,7 +7,9 @@ const Main = () => {
     return (
         <div>
            { noNavbarFooter || <Navbar></Navbar>}
-            <Outlet></Outlet>
+           <div>
+           <Outlet></Outlet>
+           </div>
             
         </div>
     );

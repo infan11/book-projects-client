@@ -1,0 +1,59 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.ibb.co/64XYSPB/ezgif-5-06188eb7db.jpg",
+      "Name": "হায়াতের দিন ফুরোলে",
+      "Writer_Name": "আরিফ আজাদ",
+      "rating": 4.2,
+      "Category": "ইসলামী সাহিত্য",
+      "price": 231
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co/Bw3MTwC/ezgif-1-c46ea4bd6c.jpg",
+      "Name": "জেগে ওঠো আবার",
+      "Writer_Name": "মিজানুর রহমান আজহারি",
+      "rating": 3.8,
+      "Category": " আত্মশুদ্ধি ও অনুপ্রেরণা",
+      "price": 259
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co/9HcMS2b/ezgif-1-9033bcafe6.jpg",
+      "Name": "রমাদান প্ল্যানার ২০২৪",
+      "Writer_Name": "শায়খ আহমাদুল্লাহ",
+      "rating": 4.5,
+      "Category": " সিয়াম, রমযান, তারাবীহ ও ঈদ",
+      "price": 90
+    },
+    {
+      "id": 4,
+      "image": "https://i.ibb.co/3v2bhGz/ezgif-1-a108610718.jpg",
+      "Name": "কুরআন থেকে নেওয়া জীবনের পাঠ",
+      "Writer_Name": "আরিফ আজাদ",
+      "rating": 3.5,
+      "Category": "ইসলামী সাহিত্য",
+      "price": 248
+    },
+    
+    {
+      "id": 5,
+      "image": "https://i.ibb.co/D19TsYW/ezgif-1-b7df8b4a0e.jpg",
+      "Name": "তারাবীহর সালাতে কুরআনের বার্তা",
+      "Writer_Name": " শায়খ আহমাদুল্লাহ",
+      "rating": 4.8,
+      "Category": "সিয়াম, রমযান, তারাবীহ ও ঈদ",
+      "price": 145
+    },
+  
+    {
+      "id": 6,
+      "image": "https://i.ibb.co/Mk6kP15/ezgif-1-43cd6286ba.jpg",
+      "Name": "আর-রাহিকুল মাখতুম (প্রিমিয়াম)",
+      "Writer_Name": "আল্লামা সফিউর রহমান মুবারকপুরী (রহ.)",
+      "rating": 4.0,
+      "Category": "সীরাতে রাসূল (সা.)",
+      "price": 640
+    }
+  ]
+  

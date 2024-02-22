@@ -9,7 +9,10 @@
 .fromDiv:hover {
     box-shadow: 0 0 20px rgba(3, 55, 168, 0.841); /* বক্সে গ্লো এফেক্ট */
   }
-  
+.books:hover {
+  box-shadow: 0 0 20px rgba(3, 55, 168, 0.841); /* বক্সে গ্লো এফেক্ট */
+}
+
 .fromDiv:focus {
     box-shadow: 30px 30px 20px rgba(3, 55, 168, 0.841); /* বক্সে গ্লো এফেক্ট */
   }
