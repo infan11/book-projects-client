@@ -1,5 +1,11 @@
 
 const AddBooks = () => {
+  const handleAddBooks = event => {
+    event.preventDefault();
+    const form = event.target;
+    const image = form.image.value;
+
+  }
     return (
         <div className="max-w-7xl mx-auto"> 
         <h2 className="text-center  font-bold text-black text-2xl mt-3">ADD YOUR BOOKS</h2>
@@ -10,7 +16,7 @@ const AddBooks = () => {
           <label className="label">
             <span className="label-text font-bold text-black">Image</span>
           </label>
-          <input type="text" name="photo" placeholder="http://photo.com" className="input input-bordered" required />
+          <input type="text" name="image" placeholder="http://photo.com" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
@@ -45,7 +51,9 @@ const AddBooks = () => {
           <label className="label">
             <span className="label-text font-bold text-black">Category (for example - Novel, Thriller, History, Drama, Sci-Fi, etc.)</span>
           </label>
-          <input type="text" name="category" placeholder="Category" className="input input-bordered" required />
+          {/* <input type="text" name="category" placeholder="Category" className="input input-bordered" required /> */}
+  
+
         </div>
         <div className="form-control">
           <label className="label">
