@@ -1,6 +1,8 @@
  import image from '../../../assets/banner/register.jpg'
  import { FcGoogle } from "react-icons/fc";
  import { FaGithub } from "react-icons/fa";
+ import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import './regsiter.css'
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
@@ -19,57 +21,26 @@ const Register = () => {
     const registerUser = {name , photo, email , password}
     console.log(registerUser);
     if (password.length < 6) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Password Must 6 Characters",
-        footer: '<a href="#">Please Try Again</a>'
-      });
+     
+        toast.error("Please 6 Character Pass")
+    
     }
     createUser(email , password)
     .then(result =>{
       const regsitersUser = result.user;
       console.log(regsitersUser)
       if(registerUser){
-        Swal.fire({
-          title: "Succesfully Register",
-          icon: "success", 
-          showClass: {
-            popup: `
-              animate__animated
-              animate__fadeInUp
-              animate__faster
-            `
-          },
-          hideClass: {
-            popup: `
-              animate__animated
-              animate__fadeOutDown
-              animate__faster
-            `
-          },
-          timer: "1500"
-        });
+        toast.success("Successfully Register")
       }
       navigate(from , {replace: true})
     })
     .catch(error => {
        console.log(error)
        if(error.code === "auth/email-already-in-use"){
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Already User",
-          footer: '<a href="#">Please Try Again</a>',
-          timer : "1200"
-        });
+        toast.error("Already in Use Email")
        }
        else if(error.code === "auth/network-request-failed"){
-        Swal.fire({
-          title: "The Internet?",
-          text: "That thing is still around?",
-          icon: "question"
-        });
+        toast.error("Please Connect Internet")
        }
     } )
 
@@ -80,45 +51,17 @@ const Register = () => {
       const googleAuth = result.user;
       console.log(googleAuth)
       if(googleAuth){
-        Swal.fire({
-          title: "Succesfully Register",
-          icon: "success", 
-          showClass: {
-            popup: `
-              animate__animated
-              animate__fadeInUp
-              animate__faster
-            `
-          },
-          hideClass: {
-            popup: `
-              animate__animated
-              animate__fadeOutDown
-              animate__faster
-            `
-          },
-          timer: "1500"
-        });
+        toast.success("Successfully Register")
       }
       navigate(from , {replace: true})
     })
     .catch(error => {
       console.log(error)
       if(error.code === "auth/email-already-in-use"){
-       Swal.fire({
-         icon: "error",
-         title: "Oops...",
-         text: "Already User",
-         footer: '<a href="#">Please Try Again</a>',
-         timer : "1200"
-       });
+   toast.error("Already in Use Email")
       }
       else if(error.code === "auth/network-request-failed"){
-       Swal.fire({
-         title: "The Internet?",
-         text: "That thing is still around?",
-         icon: "question"
-       });
+        toast.error("Please Connect Internet")
       }
    } )
 
@@ -129,45 +72,17 @@ const Register = () => {
       const githubAuth = result.user;
       console.log(githubAuth)
       if(githubAuth){
-        Swal.fire({
-          title: "Succesfully Register",
-          icon: "success", 
-          showClass: {
-            popup: `
-              animate__animated
-              animate__fadeInUp
-              animate__faster
-            `
-          },
-          hideClass: {
-            popup: `
-              animate__animated
-              animate__fadeOutDown
-              animate__faster
-            `
-          },
-          timer: "1500"
-        });
+        toast.success("Successfully Register")
       }
       navigate(from , {replace: true})
     })
     .catch(error => {
       console.log(error)
       if(error.code === "auth/email-already-in-use"){
-       Swal.fire({
-         icon: "error",
-         title: "Oops...",
-         text: "Already User",
-         footer: '<a href="#">Please Try Again</a>',
-         timer : "1200"
-       });
+   toast.error("Already in Use Email")
       }
       else if(error.code === "auth/network-request-failed"){
-       Swal.fire({
-         title: "The Internet?",
-         text: "That thing is still around?",
-         icon: "question"
-       });
+        toast.error("Please Connect Internet")
       }
    } )
 

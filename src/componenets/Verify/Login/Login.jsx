@@ -1,7 +1,7 @@
 import image from '../../../assets/banner/login.jpg'
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import Swal from 'sweetalert2';
 const Login = () => {
@@ -28,25 +28,7 @@ const Login = () => {
      const regsitersUser = result.user;
      console.log(regsitersUser)
      if(LoginUser){
-       Swal.fire({
-         title: "Succesfully Login",
-         icon: "success", 
-         showClass: {
-           popup: `
-             animate__animated
-             animate__fadeInUp
-             animate__faster
-           `
-         },
-         hideClass: {
-           popup: `
-             animate__animated
-             animate__fadeOutDown
-             animate__faster
-           `
-         },
-         timer: "1500"
-       });
+       toast.success("Successfully Login")
        
         navigate(from , {replace : true})
      }
@@ -56,20 +38,10 @@ const Login = () => {
    .catch(error => {
       console.log(error)
       if(error.code === "auth/invalid-credential"){
-       Swal.fire({
-         icon: "error",
-         title: "Oops...",
-         text: "User And Password Undefined",
-         footer: '<a href="#">Please Try Again</a>',
-         timer : "1200"
-       });
+        toast.error("Email and Password Undefined ")
       }
       else if(error.code === "auth/network-request-failed"){
-       Swal.fire({
-         title: "The Internet?",
-         text: "That thing is still around?",
-         icon: "question"
-       });
+        toast.error("Please Connect Internet")
       }
    } )
 
@@ -80,25 +52,7 @@ const Login = () => {
      const googleAuth = result.user;
      console.log(googleAuth)
      if(googleAuth){
-       Swal.fire({
-         title: "Succesfully Login",
-         icon: "success", 
-         showClass: {
-           popup: `
-             animate__animated
-             animate__fadeInUp
-             animate__faster
-           `
-         },
-         hideClass: {
-           popup: `
-             animate__animated
-             animate__fadeOutDown
-             animate__faster
-           `
-         },
-         timer: "1500"
-       });
+       toast.success("Successfully Register")
      }
    navigate(from , {replace : true})
    })
@@ -106,11 +60,7 @@ const Login = () => {
    .catch(error => {
     console.log(error)
      if(error.code === "auth/network-request-failed"){
-     Swal.fire({
-       title: "The Internet?",
-       text: "That thing is still around?",
-       icon: "question"
-     });
+      toast.error("Please Connect Internet")
     }
  } )
 
@@ -121,45 +71,15 @@ const Login = () => {
      const githubAuth = result.user;
      console.log(githubAuth)
      if(githubAuth){
-       Swal.fire({
-         title: "Succesfully Login",
-         icon: "success", 
-         showClass: {
-           popup: `
-             animate__animated
-             animate__fadeInUp
-             animate__faster
-           `
-         },
-         hideClass: {
-           popup: `
-             animate__animated
-             animate__fadeOutDown
-             animate__faster
-           `
-         },
-         timer: "1500"
-       });
+       toast.success("Successfully Login")
      }
      navigate(from , {replace : true})
    })
    .catch(error => {
      console.log(error)
-     if(error.code === "auth/email-already-in-use"){
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Already User",
-        footer: '<a href="#">Please Try Again</a>',
-        timer : "1200"
-      });
-     }
-     else if(error.code === "auth/network-request-failed"){
-      Swal.fire({
-        title: "The Internet?",
-        text: "That thing is still around?",
-        icon: "question"
-      });
+    
+    if(error.code === "auth/network-request-failed"){
+      toast.error("Please Connect Internet")
      }
   } )
 
