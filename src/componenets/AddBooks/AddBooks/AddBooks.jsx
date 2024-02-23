@@ -34,19 +34,20 @@ const AddBooks = () => {
     
     axiosSecure.post("/books", booksItem)
     .then(res => {
-        console.log(res.data);
+        console.log("Response from server:", res.data);
         if (res.data.insertedId) {
-         toast.success('Successfully toasted!')
+            toast.success('Successfully Add Book');
         }
-        
     })
     
-    .catch( error => {toast.error('error!')} )
-    }
- 
+    .catch(error => {
+      console.error("Error from server:", error);
+      toast.error('Error!');
+  });
  
 
   }
+}
     return (
         <div className="max-w-7xl mx-auto"> 
         <h2 className="text-center  font-bold text-black text-2xl mt-3">ADD YOUR BOOKS</h2>
