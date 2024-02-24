@@ -4,6 +4,7 @@ import { FaGithub } from "react-icons/fa";
 import { Link,  useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import Swal from 'sweetalert2';
+import { toast } from 'react-toastify';
 const Login = () => {
  const {user, signIn , googleUser , githubUser } = useAuth();
  const navigate = useNavigate();
@@ -30,10 +31,10 @@ const Login = () => {
      if(LoginUser){
        toast.success("Successfully Login")
        
-        navigate(from , {replace : true})
+      
      }
-    
 
+     navigate(from , {replace : true})
    })
    .catch(error => {
       console.log(error)
