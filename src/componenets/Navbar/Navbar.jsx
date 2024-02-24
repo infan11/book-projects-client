@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { CiMenuBurger } from "react-icons/ci";
 
+import { IoIosSearch } from "react-icons/io";
 const Navbar = () => {
   const {user , logout} = useAuth()
   const handleLogout = () => {
@@ -49,8 +50,11 @@ const Navbar = () => {
   LOGIN
 </NavLink>
     </>
+    
     }
    </>
+      
+     
     return (
         <div>
             <div className="navbar    lg:w-full  md:w-80  shadow-2xl lg:px-10">
@@ -66,7 +70,11 @@ const Navbar = () => {
     </div>
     <Link to={"/"}><a className="btn btn-ghost text-xl lg:ml-5">BOOK SHOP</a></Link>
   </div>
+  
+
+<p><Link to={'/search'}><IoIosSearch /></Link></p>
   <div className="navbar-end hidden font-bold  lg:flex">
+    
     <ul className="menu menu-horizontal gap-3 px-1">
      {navLinks}
     </ul>

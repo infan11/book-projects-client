@@ -1,7 +1,7 @@
 
 import { FcRating } from "react-icons/fc";
-const AllBooksCard = ({books}) => {
-    const {_id , image , name , author ,   rating , category } = books;
+const AllBooksCard = ({book}) => {
+    const { image , name , author ,   rating , category } = book;
      
     return (
         <div>

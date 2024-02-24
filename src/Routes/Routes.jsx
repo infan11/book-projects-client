@@ -8,6 +8,7 @@ import BorrowedBooks from "../componenets/BorrowdBooks/BorrowedBooks/BorrowedBoo
 import Login from "../componenets/Verify/Login/Login";
 import Register from "../componenets/Verify/Register/Register";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
+import Search from "../componenets/AlllBooks/Search/Search";
 
 export   const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ export   const router = createBrowserRouter([
         {
             path: "/borrowedBooks",
             element: <BorrowedBooks></BorrowedBooks>
+        },
+        {
+           path:"/search",
+           element: <Search></Search>
         },
         {
             path: "/login",
