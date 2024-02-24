@@ -6,27 +6,23 @@ const Search = () => {
   const [alertShown, setAlertShown] = useState(false);
   const [search , setSearch] = useState([])
   const [books , setBooks] = useState([])
-  const axiosSecure = useAxiosSecure()
- 
+  const axiosSecure = useAxiosSecure();
+  useEffect(() => {
+    axiosSecure.get("/books")
+      .then(res => {
+        setBooks(res.data);
+      })
+      .catch(err => console.log(err));
+  }, [alertShown]); 
   const handleFilter = (event) => {
-    useEffect(() => {
-        axiosSecure.get("/books")
-          .then(res => {
-            setBooks(res.data);
-          })
-          .catch(err => console.log(err));
-      }, []);
+  
       
     const keyword = event.target.value.toLowerCase();
-    setSearch(keyword);
-
-    if (books.length === 0) {
-      setAlertShown(true);
-      toast.error(" Undefined ")
-    } else {
-      setBooks(prevBooks => prevBooks.filter(book => book.name.toLowerCase().includes(keyword)));
-      setAlertShown(false); // যদি বই পাওয়া হয়, তাদের জন্য অলার্ট বন্ধ করুন
-    }
+     setSearch(keyword);
+     const bookLife = books.filter(book => book.name.toLowerCase().includes(keyword))
+     setBooks(bookLife)
+     setAlertShown(false); 
+    
   };
 
   return (
@@ -46,7 +42,7 @@ const Search = () => {
         </div>
       )}
 
-      {search && (
+   
         <div className=" ">
           {books.map(book => (
             <div key={book._id}>
@@ -65,7 +61,7 @@ const Search = () => {
             </div>
           ))}
         </div>
-      )}
+      
     </div>
   );
 };
