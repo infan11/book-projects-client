@@ -13,16 +13,20 @@ const Search = () => {
         setBooks(res.data);
       })
       .catch(err => console.log(err));
-  }, [alertShown]); 
+  }, []);
   const handleFilter = (event) => {
   
       
     const keyword = event.target.value.toLowerCase();
-     setSearch(keyword);
-     const bookLife = books.filter(book => book.name.toLowerCase().includes(keyword))
-     setBooks(bookLife)
-     setAlertShown(false); 
-    
+    setSearch(keyword);
+
+    if (books.length === 0) {
+      setAlertShown(true);
+      toast.error(" Undefined ")
+    } else {
+      setBooks(prevBooks => prevBooks.filter(book => book.name.toLowerCase().includes(keyword)));
+      setAlertShown(false); 
+    }
   };
 
   return (
@@ -42,7 +46,7 @@ const Search = () => {
         </div>
       )}
 
-   
+      {search && (
         <div className=" ">
           {books.map(book => (
             <div key={book._id}>
@@ -61,7 +65,7 @@ const Search = () => {
             </div>
           ))}
         </div>
-      
+      )}
     </div>
   );
 };

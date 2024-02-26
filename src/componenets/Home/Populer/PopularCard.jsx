@@ -1,7 +1,7 @@
 
 // import '../Populer/popular.css'
 const PopularCard = ({book}) => {
-    const {    id,  image, name,category} = book;
+    const {  id,  image, name,category} = book;
     
     
     return (

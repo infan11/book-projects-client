@@ -9,6 +9,7 @@ import Login from "../componenets/Verify/Login/Login";
 import Register from "../componenets/Verify/Register/Register";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 import Search from "../componenets/AlllBooks/Search/Search";
+import Books from "../componenets/AddBooks/Books/Books";
 
 export   const router = createBrowserRouter([
     {
@@ -36,7 +37,13 @@ export   const router = createBrowserRouter([
            path:"/search",
            element: <Search></Search>
         },
+          {
+            path : "/books/:id",
+            element: <Books></Books>
+          }
+        ,
         {
+
             path: "/login",
             element : <Login></Login>
         },

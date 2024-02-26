@@ -1,7 +1,8 @@
 
 import { FcRating } from "react-icons/fc";
-const AllBooksCard = ({book}) => {
-    const { image , name , author ,   rating , category } = book;
+import { Link } from "react-router-dom";
+const AllBooksCard = ({book , setBooks}) => {
+    const { _id ,  image , name , author ,   rating , category } = book;
      
     return (
         <div>
@@ -16,7 +17,7 @@ const AllBooksCard = ({book}) => {
     <h2 className="text-[14px]  font-black text-black flex items-center gap-2"><FcRating></FcRating>{rating}</h2>
     <h2 className="text-[14px]  font-black text-orange-400">{category}</h2>
     <div className="card-actions">
-      <button className="btn btn-block">Details</button>
+     <Link to={`/books/${_id}`}> <button className="btn btn-block">Details</button></Link>
     </div>
   </div>
 </div>

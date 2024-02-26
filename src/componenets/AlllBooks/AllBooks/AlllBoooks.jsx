@@ -51,7 +51,7 @@ const axiosSecure = useAxiosSecure()
     </form>
           <div className=" mt-3 grid md:grid-cols-4 ml-16 gap-6 ">
             {
-                books.map(book => <AllBooksCard key={book._id} book={book}></AllBooksCard>)
+                books.map(book => <AllBooksCard key={book.id} book={book} setBooks={setBooks}></AllBooksCard>)
             }
            </div>
           </div>
