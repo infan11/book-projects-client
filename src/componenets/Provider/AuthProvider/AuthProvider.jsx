@@ -34,20 +34,21 @@ const githubUser = (email , password) => {
     return signInWithPopup(auth , githubProvider)
 }
 const updateUserProfile = (name , photo) =>{
-    return  updateProfile(auth , currentUser ,{
-        displayName : name , 
-        photoURL : photo
+    return  updateProfile(auth.currentUser ,{
+        displayName : name ,  photoURL : photo
     
     })
     
 }
+
 useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth , currentUser =>{
         setUser(currentUser);
+        console.log("Current user " , currentUser);
         setLoading(false)
     })
     return () =>{
-       return unSubscribe()
+       return unSubscribe();
     }
 }, [])
  const authInfo = {

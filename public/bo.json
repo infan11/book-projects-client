@@ -1,0 +1,263 @@
+[
+    {
+    "_id": "65d82d4e1424efcc9920f3b2",
+    "image": "https://i.ibb.co/kyZt9BN/history.jpg",
+    "name": "The Warmth of Other Suns",
+    "quantity": 50,
+    "author": "Isabel Wilkerson",
+    "category": "History",
+    "rating": 4.5, 
+    "price" : 20
+    
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3b3",
+    "image": "https://i.ibb.co/DDvqLKM/history2.jpg",
+    "name": "Long Walk to Freedom",
+    "quantity": 30,
+    "author": "Nelson Mandela",
+    "category": "History",
+    "rating": 4.2, 
+    "price" : 10
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3b4",
+    "image": "https://i.ibb.co/Mn9s19J/history4jpg.jpg",
+    "name": "An Army at Dawn: The War",
+    "quantity": 20,
+    "author": "Rick Atkinson",
+    "category": "History",
+    "rating": 4.8, 
+    "price" : 20
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3b5",
+    "image": "https://i.ibb.co/PwX0cyY/history5.jpg",
+    "name": "King Leopold's",
+    "quantity": 45,
+    "author": "Adam Hochschild",
+    "category": "History",
+    "rating": 4.6, 
+    "price" : 30
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3b6",
+    "image": "https://i.ibb.co/Q6G7v0q/history6.jpg",
+    "name": "Black Hawk Down: A Story of",
+    "quantity": 60,
+    "author": "Mark Bowden",
+    "category": "History",
+    "rating": 4.3, 
+    "price" : 50
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3b7",
+    "image": "https://i.ibb.co/rmXscRh/scifi1.jpg",
+    "name": "The Lion, the Witch and the",
+    "quantity": 25,
+    "author": "C.S Lewis",
+    "category": "Sci-fi",
+    "rating": 4.7, 
+    "price" : 70
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3b8",
+    "image": "https://i.ibb.co/wR8N4JJ/scifi2.jpg",
+    "name": "The Lightning Thief",
+    "quantity": 50,
+    "author": "Rick Riordan",
+    "category": "Sci-fi",
+    "rating": 4.5, 
+    "price" : 50
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3b9",
+    "image": "https://i.ibb.co/YWnmkwb/scifi3.jpg",
+    "name": "Where the Wild Things Are",
+    "quantity": 30,
+    "author": "Maurice Sendak",
+    "category": "Sci-fi",
+    "rating": 4.2, 
+    "price" : 200
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3ba",
+    "image": "https://i.ibb.co/Mn9s19J/history4jpg.jpg",
+    "name": "A Game of Thrones",
+    "quantity": 20,
+    "author": "George R.R. Martin",
+    "category": "History",
+    "rating": 4.8, 
+    "price" : 210
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3bb",
+    "image": "https://i.ibb.co/ZSt6y84/scifi4.jpg",
+    "name": "The Phantom",
+    "quantity": 45,
+    "author": "Adam Hochschild",
+    "category": "Sci-fi",
+    "rating": 4.6, 
+    "price" : 250
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3bc",
+    "image": "https://i.ibb.co/3hy5LNT/Thriller1.jpg",
+    "name": "The Women in Cabin 10",
+    "quantity": 60,
+    "author": "Ruth Ware",
+    "category": "Thriller",
+    "rating": 4.3, 
+    "price" : 240
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3bd",
+    "image": "https://i.ibb.co/kHBSw91/Thriller2.jpg",
+    "name": "When No One Is Watching",
+    "quantity": 25,
+    "author": "Alyssa Cole",
+    "category": "Thriller",
+    "rating": 4.7, 
+    "price" : 20
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3be",
+    "image": "https://i.ibb.co/g3dsm0Z/Thriller3.jpg",
+    "name": "The Lying Game ",
+    "quantity": 60,
+    "author": "Ruth Ware",
+    "category": "History",
+    "rating": 4.3, 
+    "price" : 21
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3bf",
+    "image": "https://i.ibb.co/ThDKcDx/Thriller4.jpg",
+    "name": "The Turn of the key ",
+    "quantity": 25,
+    "author": "Ruth Ware",
+    "category": "Thriller",
+    "rating": 4.7, 
+    "price" : 30
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3c0",
+    "image": "https://i.ibb.co/zFgpvCS/Thriller5.jpg",
+    "name": "The Maidens",
+    "quantity": 60,
+    "author": "Alex Michaelides",
+    "category": "Thriller",
+    "rating": 4.3, 
+    "price" : 230
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3c1",
+    "image": "https://i.ibb.co/Q6G7v0q/history6.jpg",
+    "name": "Black Hawk Down: A Story of",
+    "quantity": 60,
+    "author": "Mark Bowden",
+    "category": "History",
+    "rating": 4.3, 
+    "price" : 220
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3c2",
+    "image": "https://i.ibb.co/pLT4QzZ/novels1.jpg",
+    "name": "Silver Linings",
+    "quantity": 25,
+    "author": " Debbie Macomber",
+    "category": "Novels",
+    "rating": 4.7, 
+    "price" : 120
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3c3",
+    "image": "https://i.ibb.co/C1bwRL9/novels2.jpg",
+    "name": "Chaos ",
+    "quantity": 60,
+    "author": "Patricia Cornwell",
+    "category": "Novels",
+    "rating": 4.3, 
+    "price" : 250
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3c4",
+    "image": "https://i.ibb.co/kQzyd1q/novels3.jpg",
+    "name": "Neighbors",
+    "quantity": 25,
+    "author": "Danielle Steel",
+    "category": "Novels",
+    "rating": 4.7, 
+    "price" : 240
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3c5",
+    "image": "https://i.ibb.co/q7jP3p0/novels4.jpg",
+    "name": "Autopsy",
+    "quantity": 60,
+    "author": "Patricia Cornwell",
+    "category": "Novels",
+    "rating": 4.3, 
+    "price" : 320
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3c6",
+    "image": "https://i.ibb.co/6PdrVXL/novels5.jpg",
+    "name": "The Searcher",
+    "quantity": 25,
+    "author": "Tana French",
+    "category": "Novels",
+    "rating": 4.7, 
+    "price" : 270
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3c7",
+    "image": "https://i.ibb.co/84HLPwR/drama1.jpg",
+    "name": "Go Ask Alice",
+    "quantity": 60,
+    "author": "Anonymous",
+    "category": "Drama",
+    "rating": 4.3, 
+    "price" : 203
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3c8",
+    "image": "https://i.ibb.co/c3f6whx/drama2.jpg",
+    "name": "The Fault in Our Stars",
+    "quantity": 25,
+    "author": "John Green",
+    "category": "Drama",
+    "rating": 4.7, 
+    "price" : 240
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3c9",
+    "image": "https://i.ibb.co/PZ2vRnm/drama3.jpg",
+    "name": "House of Leaves",
+    "quantity": 25,
+    "author": "Mark Z. Danielewski",
+    "category": "Drama",
+    "rating": 4.7, 
+    "price" : 240
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3ca",
+    "image": "https://i.ibb.co/MpgGNgX/drama4.jpg",
+    "name": "Orphan Train",
+    "quantity": 25,
+    "author": " Christina Baker Kline",
+    "category": "Drama",
+    "rating": 4.7, 
+    "price" : 220
+    },
+    {
+    "_id": "65d82d4e1424efcc9920f3cb",
+    "image": "https://i.ibb.co/RvcP2h9/drama5.jpg",
+    "name": "Code Breaker Chronicles",
+    "quantity": 25,
+    "author": "Benjamin Cipher",
+    "category": "Drama",
+    "rating": 4.7, 
+    "price" : 240
+    }
+    ]

@@ -6,32 +6,37 @@ import 'react-toastify/dist/ReactToastify.css';
 import './regsiter.css'
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
-import Swal from 'sweetalert2';
+import { reload } from 'firebase/auth';
+
 const Register = () => {
-  const {user,  createUser , googleUser , githubUser } = useAuth();
+  const {  createUser ,  updateUserProfile ,  googleUser , githubUser } = useAuth(null);
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/"
-  const handleSubmit = e => {
-    e.preventDefault();
-    const form = e.target;
+  const handleSubmit = event => {
+    event.preventDefault();
+    const form = event.target;
     const name = form.name.value;
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    const registerUser = {name , photo, email , password}
-    console.log(registerUser);
+    // const registerUser = {name , photo, email , password}
+    // console.log(registerUser);
     if (password.length < 6) {
      
         toast.error("Please 6 Character Pass")
     
     }
-    createUser(email , password)
+    createUser( email , password , name , photo)
     .then(result =>{
       const regsitersUser = result.user;
       console.log(regsitersUser)
-      if(registerUser){
-        toast.success("Successfully Register")
-      }
+      updateUserProfile(name , photo)
+      .then(() => {
+        
+          toast.success("Successfully Register")
+        
+     })
+     
       navigate(from , {replace: true})
     })
     .catch(error => {

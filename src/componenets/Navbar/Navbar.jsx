@@ -103,7 +103,7 @@ const Navbar = () => {
      { user ? <>
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-        <img  src={user?.photoURL} className="rounded-full w-28 mx-auto" />
+        <img  src={user?.photoURL} className="rounded-3xl w-32 mx-auto" />
         </div>
       </div>
      </>: <>
