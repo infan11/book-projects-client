@@ -10,6 +10,8 @@ import Register from "../componenets/Verify/Register/Register";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 import Search from "../componenets/AlllBooks/Search/Search";
 import Books from "../componenets/AddBooks/Books/Books";
+import Dashboard from "../componenets/Dashboard/Dashboard/Dashboard";
+import MyCart from "../componenets/Dashboard/MyCart/MyCart";
 
 export   const router = createBrowserRouter([
     {
@@ -53,4 +55,14 @@ export   const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path: "/dashoard",
+      element : <Dashboard></Dashboard>,
+      children : [
+        {
+          path : "/dashoard/myCart",
+          element: <MyCart></MyCart>
+        }
+      ]
+    }
   ]);

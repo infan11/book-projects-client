@@ -43,6 +43,7 @@
   background-color: #ffffff;
   border: 1px solid #ffffff;
   transition: box-shadow 0.4s ease-in-out;
+  padding: 20px;
   
 
 }
@@ -51,5 +52,54 @@
   }
 
 .fromDivNav:focus {
+    box-shadow: 510px 510px 510px rgba(2, 82, 255, 0.841); /* বক্সে গ্লো এফেক্ট */
+  }
+.fromDivNavD  {
+  box-shadow: -1px 2px 5px 5px rgba(117, 116, 116, 0.117);
+  background-color: #ffffff;
+  border: 1px solid #2211d5;
+  transition: box-shadow 0.4s ease-in-out;
+
+  
+
+}
+.fromDivNavD:hover {
+    box-shadow:0px 0px 20px rgba(2, 82, 255, 0.841); /* বক্সে গ্লো এফেক্ট */
+  }
+
+.fromDivNavD:focus {
+    box-shadow: 510px 510px 510px rgba(2, 82, 255, 0.841); /* বক্সে গ্লো এফেক্ট */
+  }
+.fromDivNavDN  {
+  box-shadow: 20px 20px 20px 20px rgba(117, 116, 116, 0.117);
+  background-color: #fdfdfd;
+  border: 1px solid #efefef;
+  transition: box-shadow 0.4s ease-in-out;
+  border-radius: 15px 15px 15px 15px ;
+
+  
+
+}
+.fromDivNavDN:hover {
+    box-shadow:0px 0px 20px rgba(2, 82, 255, 0.841); /* বক্সে গ্লো এফেক্ট */
+  }
+
+.fromDivNavDN:focus {
+    box-shadow: 510px 510px 510px rgba(2, 82, 255, 0.841); /* বক্সে গ্লো এফেক্ট */
+  }
+.fromDivP {
+  box-shadow: -1px 2px 5px 5px rgba(117, 116, 116, 0.117);
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  transition: box-shadow 0.4s ease-in-out;
+  padding: 20px;
+  
+
+}
+.fromDivNavP:hover {
+    box-shadow: 0 0 20px rgba(2, 82, 255, 0.841); /* বক্সে গ্লো এফেক্ট */
+  }
+
+.fromDivNavP:focus {
     box-shadow: 510px 510px 510px rgba(2, 82, 255, 0.841); /* বক্সে গ্লো এফেক্ট */
   }

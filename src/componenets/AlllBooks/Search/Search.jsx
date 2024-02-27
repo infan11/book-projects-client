@@ -30,29 +30,29 @@ const Search = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto ml-44 min-h-screen">
-      <input
+    <div className="max-w-7xl mx-auto  ">
+      <input 
         type="text"
         onChange={handleFilter}
         value={search}
         placeholder='Keyword'
-        className='bg-white p-3 w-60 border rounded border-blue-500'
+        className='bg-white p-3 w-60 border formDiv rounded border-blue-500'
       />
 
       {alertShown && (
         <div className="my-4">
       
-          <p className="text-red-500 font-bold">কোনও মিল হয়নি!</p>
+          <p className="text-red-500 font-bold">Unavilable</p>
         </div>
       )}
 
       {search && (
         <div className=" ">
           {books.map(book => (
-            <div key={book._id}>
-              <div className="flex items-center gap-3">
+            <div key={book._id} className='gap-3'>
+              <div className="flex items-center gap-5">
                 <div className="avatar">
-                  <div className=" w-32 h-32 ">
+                  <div className=" w-32 h-32  ">
                     <img src={book.image} alt="Avatar Tailwind CSS Component" />
                   </div>
                 </div>

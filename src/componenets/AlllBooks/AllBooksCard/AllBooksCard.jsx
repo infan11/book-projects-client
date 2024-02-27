@@ -39,22 +39,23 @@ const AllBooksCard = ({book , setBooks}) => {
         theme: "light",
         });
          // Automatice Refresh browser
-   refetch() 
+
     }
  
    })
+   refetch() 
       }
       else{
         Swal.fire({
           title: " Are You User ? ",
           text: "You won't be able to revert this!", 
           icon: "warning",
-          color : "##ffff",
+          color : "#fff",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#d33",
           background: "rgba(0, 0, 0, 0.5)" ,
-          confirmButtonText: "Yes or No "
+          confirmButtonText: "Login "
         }).then((result) => {
           if (result.isConfirmed) {
             //send to data base 

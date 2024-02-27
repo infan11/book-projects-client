@@ -16,7 +16,7 @@ const Navbar = () => {
   <NavLink
   to="/"
   className={({ isActive, isPending }) =>
-  `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : " text-blue-500 "}`
+  `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : "  text-blue-500 "}`
 }
 >
   HOME
@@ -66,18 +66,18 @@ const Navbar = () => {
       <div tabIndex={0} role="button" className="btn btn-ghost  text-black font-bold text-xl lg:hidden">
       <CiMenuBurger />
       </div>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+      <ul tabIndex={0} className=" fromDivNav menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
        {navLinks}
       </ul>
     </div>
-    <Link to={"/"}><a className="btn btn-ghost text-xl lg:ml-5">BOOK SHOP</a></Link>
+    <Link  to={"/"}><a className="btn btn-ghost text-xl lg:ml-5  hidden md:block fromDivNavP">BOOK SHOP</a></Link>
   </div>
   
 
-<p><Link to={'/search'}><IoIosSearch /></Link></p>
+<p className=" fromDivNav rounded-2xl md:w-10 lg:w-20 text-2xl text-blue-500 font-bold  "><Link to={'/search'}><IoIosSearch /></Link></p>
   <div className="navbar-end hidden font-bold  lg:flex">
     
-    <ul className="menu menu-horizontal gap-3 px-1">
+    <ul className="menu menu-horizontal gap-10 px-3  rounded-lg fromDivNav ">
      {navLinks}
     </ul>
   </div>
@@ -94,18 +94,18 @@ const Navbar = () => {
           <span className="font-bold text-lg">{bookCart.length} Items</span>
           <span className="text-info">Subtotal: $999</span>
           <div className="card-actions">
-            <button className="btn btn-primary btn-block">View cart</button>
+          <Link to={"/dashoard"}>  <button className="btn btn-primary btn-block">View cart</button></Link>
           </div>
         </div>
       </div>
     </div></> : <>
     <NavLink className="ml-1 "></NavLink>
    </>}
-    <div className=" dropdown dropdown-end">
+    <div className=" dropdown dropdown-end ">
      { user ? <>
-      <div tabIndex={0} role="button" className="btn btn-ghost h-16  fromDivNav">
-        <div className=" w-12 rounded-full">
-        <img  src={user?.photoURL} className="rounded-full   " />
+      <div tabIndex={0} role="button" className="btn btn-ghost h-16  fromDivNavP">
+        <div className=" w-10 rounded-full">
+        <img  src={user?.photoURL} className="rounded-full  " alt="" />
         </div>
       </div>
      </>: <>
@@ -119,8 +119,8 @@ const Navbar = () => {
 </NavLink>
      </>
      }
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li>
+      <ul tabIndex={0} className="  fromDivNav menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        <li className=" fromDivNav">
           <a className="justify-betwee ">
             Profile
             <span className="badge">New</span>
