@@ -36,5 +36,20 @@
 }
 .footerA {
   box-shadow: 10px 10px 10px 10px black;
-  margin-top: 10px;
+ 
 }
+.fromDivNav  {
+  box-shadow: -1px 2px 5px 5px rgba(117, 116, 116, 0.117);
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  transition: box-shadow 0.4s ease-in-out;
+  
+
+}
+.fromDivNav:hover {
+    box-shadow: 0 0 20px rgba(2, 82, 255, 0.841); /* বক্সে গ্লো এফেক্ট */
+  }
+
+.fromDivNav:focus {
+    box-shadow: 510px 510px 510px rgba(2, 82, 255, 0.841); /* বক্সে গ্লো এফেক্ট */
+  }
