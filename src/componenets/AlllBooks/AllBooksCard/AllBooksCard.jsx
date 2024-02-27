@@ -1,10 +1,68 @@
 
 import { FcRating } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { toast } from "react-toastify";
+import useBooks from "../../Hooks/useBooks";
 const AllBooksCard = ({book , setBooks}) => {
+  const axiosSecure  = useAxiosSecure();
+  const [refetch] = useBooks();
     const { _id ,  image , name , author ,   rating , category , price } = book;
+    const {user} = useAuth();
+    const location = useLocation();
+    const navigate = useNavigate();
      const handleAddBook = books =>{
       console.log(books);
+      if(user && user.email){
+        //sent to datbase 
+        const addToBooksItem = {
+          bookId: _id,
+          email : user.email,
+          name,
+          image , 
+          price
+         }
+   axiosSecure.post("addToBooks" , addToBooksItem)
+   .then(res => {
+    console.log(res.data)
+    if(res.data.insertedId){
+      toast.success(` Successfully Add ${name}`, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+         // Automatice Refresh browser
+   refetch() 
+    }
+ 
+   })
+      }
+      else{
+        Swal.fire({
+          title: " Are You User ? ",
+          text: "You won't be able to revert this!", 
+          icon: "warning",
+          color : "##ffff",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          background: "rgba(0, 0, 0, 0.5)" ,
+          confirmButtonText: "Yes or No "
+        }).then((result) => {
+          if (result.isConfirmed) {
+            //send to data base 
+            
+            navigate("/login" ,{state: {form : location}})
+          }
+        });
+      }
      }
     return (
         <div>
