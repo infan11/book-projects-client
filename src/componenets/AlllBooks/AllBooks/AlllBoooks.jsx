@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import AllBooksCard from "../AllBooksCard/AllBooksCard";
 import AllBookBanner from "../AlllBookBanner/AllBookBanner";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import Books from "../../AddBooks/Books/Books";
 
 
 const AlllBoooks = () => {
@@ -49,11 +50,12 @@ const axiosSecure = useAxiosSecure()
 
       <button className="btn btn-outline text-blue-500 font-bold text-xl w-60 lg:ml-6 ">Search</button>
     </form>
-          <div className=" mt-3 grid md:grid-cols-4 ml-16 gap-6 ">
+          <div className=" mt-3 grid md:grid-cols-4 ml-7 gap-6 ">
             {
-                books.map(book => <AllBooksCard key={book.id} book={book} setBooks={setBooks}></AllBooksCard>)
+                books.map(book => <AllBooksCard key={book.id} book={book} setBooks={setBooks}></AllBooksCard>   )
             }
            </div>
+          
           </div>
         </div>
     );
