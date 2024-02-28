@@ -4,7 +4,7 @@ import useAuth from "./useAuth";
 
 const useBooks = () => {
     // tanstack query 
-// const totalPrice = item.reduce((accmulator , currentItem ) => { accmulator  + currentItem.price } , 0) 
+// const totalPrice = item.reduce((accmulator , currentItem ) =>  accmulator  + currentItem.price } , 0)
     
    const { user } = useAuth();
     const axiosSecure = useAxiosSecure();

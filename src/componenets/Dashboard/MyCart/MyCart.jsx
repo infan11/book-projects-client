@@ -3,14 +3,19 @@ import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import useBooks from '../../Hooks/useBooks';
 
 const MyCart = () => {
-    const [cart] = useBooks();
+    const [bookCart] = useBooks();
+    const totalPrice =  bookCart.reduce((total , item  )  => total + item.price  , 0 ) 
 
     
     return (
         <div className='  mt-3'>
+           <div className='md:flex fromDiv font-bold justify-evenly text-blue-500'>
+           <p>Your Order : {bookCart.length}</p>
+            <p > Total : ${totalPrice}</p>
+           </div>
           <div className='gap-4'>
             {
-                cart.map(BooksCart =>   <div key={BooksCart.id} className="hero border-2 mt-4 border-red-400 fromDiv">
+                bookCart.map(BooksCart =>   <div key={BooksCart.id} className="hero border-2 mt-4 border-red-400 fromDiv">
                 <div className="hero-content flex-col lg:flex-row">
                   <img src={BooksCart.image} className="w-60 h-80 fromDiv rounded-lg shadow-2xl" />
                   <div>

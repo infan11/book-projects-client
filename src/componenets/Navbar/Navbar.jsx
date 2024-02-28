@@ -7,6 +7,7 @@ import useBooks from "../Hooks/useBooks";
 const Navbar = () => {
   const [bookCart] = useBooks()
   const {user , logout} = useAuth()
+  const totalPrice =  bookCart.reduce((total , item  )  => total + item.price  , 0 ) 
   const handleLogout = () => {
      logout()
      .then(() => {})
@@ -70,7 +71,7 @@ const Navbar = () => {
        {navLinks}
       </ul>
     </div>
-    <Link  to={"/"}><a className="btn btn-ghost text-xl lg:ml-5  hidden md:block fromDivNavP">BOOK SHOP</a></Link>
+    <Link  to={"/"}><a className="btn btn-ghost text-xl lg:ml-5  hidden md:block fromDivNavP text-blue-500">BOOK SHOP</a></Link>
   </div>
   
 
@@ -89,17 +90,18 @@ const Navbar = () => {
           <span className="badge badge-sm indicator-item">{bookCart.length}</span>
         </div>
       </div>
-      <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
-        <div className="card-body">
+      <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-60 fromDivNav ">
+        <div className="card-body text-blue-500 font-bold ">
           <span className="font-bold text-lg">{bookCart.length} Items</span>
-          <span className="text-info">Subtotal: $999</span>
+          <span className="text-info">Subtotal: ${totalPrice}</span>
           <div className="card-actions">
-          <Link to={"/dashboard/cart"}>  <button className="btn btn-primary btn-block">View cart</button></Link>
+          <Link to={"/dashboard/cart"}>  <button className="btn btn-outline font-bold  text-blue-500 btn-block">View cart</button></Link>
           </div>
         </div>
       </div>
     </div></> : <>
     <NavLink className="ml-1 "></NavLink>
+
    </>}
     <div className=" dropdown dropdown-end ">
      { user ? <>
