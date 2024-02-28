@@ -13,8 +13,8 @@ const AllBooksCard = ({book , setBooks}) => {
     const {user} = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
-     const handleAddBook = books =>{
-      console.log(books);
+     const handleAddBook =() =>{
+
       if(user && user.email){
         //sent to datbase 
         const addToBooksItem = {
@@ -37,14 +37,16 @@ const AllBooksCard = ({book , setBooks}) => {
         draggable: true,
         progress: undefined,
         theme: "light",
+        
         });
          // Automatice Refresh browser
-
+    
     }
- 
+    refetch() 
    })
-   refetch() 
+ 
       }
+      
       else{
         Swal.fire({
           title: " Are You User ? ",
@@ -82,7 +84,7 @@ const AllBooksCard = ({book , setBooks}) => {
 
     <div className="card-actions">
      {/* <Link to={`/books/${_id}`}> <button className="btn btn-block">Details</button></Link> */}
-     <button onClick={() => handleAddBook(book)} className="btn btn-block">Add Book</button>
+     <button onClick={handleAddBook} className="btn btn-block">Add Book</button>
     </div>
   </div>
 </div>
