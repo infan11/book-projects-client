@@ -7,30 +7,40 @@ import './regsiter.css'
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import { reload } from 'firebase/auth';
+import axios from 'axios';
+import { imageUpload } from '../../Hooks/utils';
 
 const Register = () => {
   const {  createUser ,  updateUserProfile ,  googleUser , githubUser } = useAuth(null);
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/"
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    // const registerUser = {name , photo, email , password}
+    const photo = form.photo.files[0];
+    const imageData=  await imageUpload(photo)
+    
+//    catch(error)
+// {
+//   console.log(error)
+// }    // const registerUser = {name , photo, email , password}
     // console.log(registerUser);
+console.log(imageData);
+
+
     if (password.length < 6) {
      
         toast.error("Please 6 Character Pass")
     
     }
-    createUser( email , password , name , photo)
+    createUser( email , password )
     .then(result =>{
       const regsitersUser = result.user;
       console.log(regsitersUser)
-      updateUserProfile(name , photo)
+      updateUserProfile(name , imageData?.data?.display_url)
       .then(() => {
         
           toast.success("Successfully Register")
@@ -113,7 +123,8 @@ const Register = () => {
           <label className="label">
             <span className="label-text font-bold font-mono  text-black">Photo</span>   
           </label>
-          <input type="text" placeholder="http://photo.com" name='photo' className=" formInput p-3 border md:w-72  lg:w-80     bg-white font-bold  rounded-xl " required />
+          <input type="file" name='photo' accept='image/*' className=" formInput p-3 border md:w-72  lg:w-80     bg-white font-bold  rounded-xl" />
+          
         </div>
         <div className="form-control">
           <label className="label">

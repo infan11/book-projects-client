@@ -30,7 +30,7 @@ export   const router = createBrowserRouter([
         },
         {
             path: "/allBooks",
-            element:<AlllBoooks></AlllBoooks>
+            element:<PrivateRoutes><AlllBoooks></AlllBoooks></PrivateRoutes>
         },
         {
             path: "/borrowedBooks",
@@ -42,7 +42,7 @@ export   const router = createBrowserRouter([
         },
           {
             path : "/books/:id",
-            element: <Books></Books>
+            element:<PrivateRoutes> <Books></Books></PrivateRoutes>
           }
         ,
         {

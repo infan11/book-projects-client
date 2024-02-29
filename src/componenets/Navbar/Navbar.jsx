@@ -6,7 +6,7 @@ import { IoIosSearch } from "react-icons/io";
 import useBooks from "../Hooks/useBooks";
 const Navbar = () => {
   const [bookCart] = useBooks()
-  const {user , logout} = useAuth()
+  const {user , logout } = useAuth()
   const totalPrice =  bookCart.reduce((total , item  )  => total + item.price  , 0 ) 
   const handleLogout = () => {
      logout()
