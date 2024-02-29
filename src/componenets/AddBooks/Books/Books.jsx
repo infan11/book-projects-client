@@ -13,7 +13,7 @@ const Books = () => {
     console.log(id);
     const [books , setBooks] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/books/${id}`)
+        fetch(`https://book-projects-server-qemx.vercel.app/books/${id}`)
         .then(res => res.json())
         .then(data => setBooks(data))
     }, [])
