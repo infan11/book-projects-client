@@ -38,6 +38,14 @@ const Navbar = () => {
 >
   ALLBOOKS
 </NavLink>
+<NavLink
+  to="/borrowedBooks"
+  className={({ isActive, isPending }) =>
+  `transition-all duration-300 ${isPending ? "pending" : isActive ? "active" : "text-blue-500  uppercase"}`
+  }
+>
+BorrowedBooks
+</NavLink>
 
     { user ? <>
    
@@ -75,13 +83,14 @@ const Navbar = () => {
   </div>
   
 
-<p className=" fromDivNav rounded-2xl md:w-10 lg:w-20 text-2xl text-blue-500 font-bold  "><Link to={'/search'}><IoIosSearch /></Link></p>
-  <div className="navbar-end hidden font-bold  lg:flex">
+
+  <div className="navbar hidden font-bold  lg:flex">
     
-    <ul className="menu menu-horizontal gap-10 px-3  rounded-lg fromDivNav ">
+    <ul className="menu menu-horizontal gap-5 px-3   rounded-lg fromDivNav ">
      {navLinks}
     </ul>
   </div>
+  <p className=" fromDivNav rounded-2xl md:w-10 lg:w-20 text-2xl text-blue-500 font-bold  "><Link to={'/search'}><IoIosSearch /></Link></p>
   <div className="flex-none">
    {user ? <> <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
