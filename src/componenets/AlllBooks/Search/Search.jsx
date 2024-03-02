@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
+import useBooks from '../../Hooks/useBooks';
 
 const Search = () => {
   const [alertShown, setAlertShown] = useState(false);
@@ -23,6 +24,7 @@ const Search = () => {
     if (books.length === 0) {
       setAlertShown(true);
       toast.error(" Undefined ")
+     
     } else {
       setBooks(prevBooks => prevBooks.filter(book => book.name.toLowerCase().includes(keyword)));
       setAlertShown(false); 
@@ -36,16 +38,16 @@ const Search = () => {
         onChange={handleFilter}
         value={search}
         placeholder='Keyword'
-        className='bg-white p-3 w-60 border formDiv rounded border-blue-500'
+        className='bg-white mb-7 p-3 w-60 border formDiv rounded border-blue-500'
       />
-
+ 
       {alertShown && (
         <div className="my-4">
       
           <p className="text-red-500 font-bold">Unavilable</p>
         </div>
       )}
-
+ 
       {search && (
         <div className=" ">
           {books.map(book => (
