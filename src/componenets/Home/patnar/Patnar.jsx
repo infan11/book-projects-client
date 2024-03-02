@@ -13,7 +13,7 @@ import imageE from '../../../assets/patnar/image5.jpg'
 const Patnar = () => {
     
     return (
-        <div className='w-full  hidden lg:block   pt-9 px-28 mr-8 p-20 bg-slate-100'>
+        <div className='w-full  hidden lg:block   pt-9  mr-8 p-20 bg-slate-100'>
             <div className= "    ">
               <div>
               <Swiper

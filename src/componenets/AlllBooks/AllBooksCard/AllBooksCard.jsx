@@ -12,7 +12,9 @@ const AllBooksCard = ({book , setBooks}) => {
     return (
         <div>
           
-            <div className=" w-72 h-[580px]   shadow-xl">
+          <div className="card-actions">
+     <Link to={`/books/${_id}`}>  
+     <div className=" fromDivNavP  w-64 h-[520px] p-2 rounded-xl  shadow-xl">
   <figure className="px-2 pt-2">
     <img src={image} alt="Shoes" className="rounded-xl w-64 h-72  " />
   </figure>
@@ -24,14 +26,12 @@ const AllBooksCard = ({book , setBooks}) => {
     <h2 className="text-[14px]  font-black text-orange-400 top-52">${price}</h2>
     
 
-    <div className="card-actions">
-     <Link to={`/books/${_id}`}> <button className="btn fromDiv w-60 font-bold  text-blue-500 btn-outline">Details</button></Link>
-    <div>
-     
-    </div>
-    </div>
+   
   </div>
 </div>
+      </Link>
+    
+    </div>
         </div>
     );
 };
