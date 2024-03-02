@@ -25,8 +25,15 @@ const Patnar = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide><div className="   mt-28 w-96 bg-white fromDivNav rounded-xl relative">
-  <figure><img src={imageA} className='w-[180px] mx-auto border-4 border-blue-700 rounded-full h-44 -top-24 ml-20 absolute'   alt="Shoes" /></figure>
+        <SwiperSlide><div  data-aos="zoom-in"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center" className="   mt-28 w-96 bg-white fromDivNav rounded-xl relative">
+  <figure><img src={imageA} className='w-[180px] fromDiv  mx-auto border-2 border-blue-700 rounded-full h-44 -top-24 ml-20 absolute'   alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="text-2xl font-bold  mt-6 text-black text-center ">Mohammad Osman </h2>
     <h2 className="text-center font-bold  text-black">Patner, Book Shop</h2>
@@ -37,8 +44,15 @@ In the quiet corner of the library, my book partner and I immersed ourselves in 
     </div>
   </div>
 </div></SwiperSlide>
-        <SwiperSlide><div className="   mt-28 w-96 bg-white fromDivNav rounded-xl relative">
-  <figure><img src={imageB} className='w-[180px] mx-auto border-4 border-blue-700 rounded-full h-44 -top-24 ml-20 absolute'   alt="Shoes" /></figure>
+        <SwiperSlide><div data-aos="zoom-in"
+    data-aos-offset="150"
+    data-aos-delay="100"
+    data-aos-duration="900"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center" className="   mt-28 w-96 bg-white fromDivNav rounded-xl relative">
+  <figure><img src={imageB} className='w-[180px] fromDiv  mx-auto border-4 border-blue-700 rounded-full h-44 -top-24 ml-20 absolute'   alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="text-2xl font-bold  mt-6 text-black text-center ">Mohammad Infan </h2>
     <h2 className="text-center font-bold  text-black">Patner, Book Shop</h2>
@@ -49,8 +63,15 @@ In the quiet corner of the library, my book partner and I immersed ourselves in 
     </div>
   </div>
 </div></SwiperSlide>
-        <SwiperSlide><div className="   mt-28 w-96 bg-white fromDivNav rounded-xl relative">
-  <figure><img src={imageC} className='w-[180px] mx-auto border-4 border-blue-700 rounded-full h-44 -top-24 ml-20 absolute'   alt="Shoes" /></figure>
+        <SwiperSlide><div data-aos="zoom-in"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center" className="   mt-28 w-96 bg-white fromDivNav rounded-xl relative">
+  <figure><img src={imageC} className='w-[180px] fromDiv  mx-auto border-4 border-blue-700 rounded-full h-44 -top-24 ml-20 absolute'   alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="text-2xl font-bold  mt-6 text-black text-center ">Mohammad Jioun </h2>
     <h2 className="text-center font-bold  text-black">Patner, Book Shop</h2>
@@ -61,8 +82,15 @@ In the quiet corner of the library, my book partner and I immersed ourselves in 
     </div>
   </div>
 </div></SwiperSlide>
-        <SwiperSlide><div className="   mt-28 w-96 bg-white fromDivNav rounded-xl relative">
-  <figure><img src={imageD} className='w-[180px] mx-auto border-4 border-blue-700 rounded-full h-44 -top-24 ml-20 absolute'   alt="Shoes" /></figure>
+        <SwiperSlide><div data-aos="zoom-in"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center" className="   mt-28 w-96 bg-white fromDivNav rounded-xl relative">
+  <figure><img src={imageD} className='w-[180px] fromDiv  mx-auto border-4 border-blue-700 rounded-full h-44 -top-24 ml-20 absolute'   alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="text-2xl font-bold  mt-6 text-black text-center ">Mohammad Jito </h2>
     <h2 className="text-center font-bold  text-black">Patner, Book Shop</h2>

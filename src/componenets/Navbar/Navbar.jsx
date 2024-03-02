@@ -67,8 +67,9 @@ BorrowedBooks
       
      
     return (
-        <div className="">
-            <div className="navbar    lg:w-full  md:w-80  shadow-2xl lg:px-10">
+        <div  className="">
+            <div data-aos="fade-down"
+     className="navbar    lg:w-full  md:w-80  shadow-2xl lg:px-10">
             <div className="navbar ">
             <div className="navbar ">
     <div className="dropdown">
@@ -112,12 +113,13 @@ BorrowedBooks
     <NavLink className="ml-1 "></NavLink>
 
    </>}
-    <div className=" dropdown dropdown-end ">
+    <div className=" dropdown dropdown-end  ">
      { user ? <>
-      <div tabIndex={0} role="button" className="btn btn-ghost h-16  fromDivNavP">
+      <div tabIndex={0} role="button" className="btn btn-ghost   fromDivNavP">
         <div className=" w-10 rounded-full">
-        <img  src={user?.photoURL} className="rounded-full  " alt="" />
+        <img  src={user?.photoURL} className="rounded-full w-10 " alt="" />
         </div>
+        
       </div>
      </>: <>
       <NavLink
@@ -130,14 +132,19 @@ BorrowedBooks
 </NavLink>
      </>
      }
-      <ul tabIndex={0} className="  fromDivNav menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li className=" fromDivNav">
-          <a className="justify-betwee ">
-            Profile
-            <span className="badge">New</span>
-          </a>
-        </li>
-        <li><a></a></li>
+      <ul tabIndex={0} className="  fromDivNav  menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-80">
+      <div className=" rounded-full">
+        <img  src={user?.photoURL} className="w-20 rounded-full  mx-auto " alt="" />
+        </div>
+        <div className="divider"></div>
+        <div className="divider"></div>
+
+        <li className=" text-xl text-black ">{user?.displayName}</li>
+        <div className="divider"></div>
+        <li className=" text-xl text-black ">{user?.email}</li>
+        <div className="divider"></div>
+        <li className="text-xl text-black">Your Profile</li>
+        <div className="divider"></div>
         <li>  { user ? <>
       <NavLink
 onClick={handleLogout}

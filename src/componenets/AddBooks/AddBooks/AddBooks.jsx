@@ -49,7 +49,14 @@ const AddBooks = () => {
   }
 }
     return (
-        <div className="max-w-7xl mx-auto"> 
+        <div data-aos="zoom-in"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center" className="max-w-7xl mx-auto"> 
         <h2 className="text-center  font-bold text-black text-2xl mt-3">ADD YOUR BOOKS</h2>
            <form onSubmit={handleAddBooks} className="card-body">
             {/* start name and image */}

@@ -13,7 +13,28 @@
   box-shadow: 0 0 20px rgba(3, 55, 168, 0.841); /* বক্সে গ্লো এফেক্ট */
 }
 
-.fromDiv:focus {
+.fromDivAdd:focus {
+    box-shadow: 30px 30px 20px rgba(3, 55, 168, 0.841); /* বক্সে গ্লো এফেক্ট */
+  }
+.fromDivAdd  {
+  box-shadow: -1px 2px 5px 5px rgba(117, 116, 116, 0.117);
+  padding: 20px;
+  background-color:rgba(97, 72, 208, 0.841) ;
+  border: 1px solid #ad4f4f;
+  transition: box-shadow 0.2s ease-in-out;
+  
+
+}
+.fromDivAdd:hover {
+    box-shadow: 10 10 20px rgba(3, 55, 168, 0.841); /* বক্সে গ্লো এফেক্ট */
+  
+    
+  }
+.books:hover {
+  box-shadow: 0 0 20px rgba(3, 55, 168, 0.841); /* বক্সে গ্লো এফেক্ট */
+}
+
+.fromDivAdd:focus {
     box-shadow: 30px 30px 20px rgba(3, 55, 168, 0.841); /* বক্সে গ্লো এফেক্ট */
   }
 .formInput{

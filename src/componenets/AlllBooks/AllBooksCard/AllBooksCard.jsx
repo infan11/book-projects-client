@@ -2,7 +2,6 @@
 import { FcRating } from "react-icons/fc";
 import { Link,} from "react-router-dom";
 
-import useBooks from "../../Hooks/useBooks";
 
 const AllBooksCard = ({book , setBooks}) => {
 
@@ -12,7 +11,14 @@ const AllBooksCard = ({book , setBooks}) => {
     return (
         <div>
           
-          <div className="card-actions">
+          <div data-aos="zoom-in"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center" className="card-actions">
      <Link to={`/books/${_id}`}>  
      <div className=" fromDivNavP  w-64 h-[520px] p-2 rounded-xl  shadow-xl">
   <figure className="px-2 pt-2">

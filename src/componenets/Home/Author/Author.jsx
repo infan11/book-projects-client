@@ -7,7 +7,14 @@ const Author = () => {
         <div>
             <h3 className='font-bold text-4xl mb-4'>Checkout our featured author</h3>
             <div className='grid md:grid-cols-4 md:ml-6 gap-5'>
-                <div className='w-[300px]   text-black'> 
+                <div data-aos="zoom-in"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center"   className='w-[300px]   text-black'> 
                     <img src={imageD} className=' rounded-lg h-80' alt="" />
                     <div className=' flex justify-between  items-center text-black text-xl  font-bold'>
                     <p>John Doe</p> 
@@ -16,7 +23,14 @@ const Author = () => {
                     <p>Author & Writter</p>
                      
                 </div>
-                <div className='w7w-[300px]0  text-black'> 
+                <div  data-aos="zoom-in"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center" className='w7w-[300px]0  text-black'> 
                     <img src={imageB} className=' rounded-lg h-80' alt="" />
                     <div className=' flex justify-between  items-center text-black text-xl  font-bold'>
                     <p>Wotson</p> 
@@ -25,7 +39,14 @@ const Author = () => {
                     <p>Author & Writter</p>
                      
                 </div>
-                <div className='w7w-[300px]0  text-black'> 
+                <div  data-aos="zoom-in"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center" className='w7w-[300px]0  text-black'> 
                     <img src={imageC} className=' rounded-lg h-80' alt="" />
                     <div className=' flex justify-between  items-center text-black text-xl  font-bold'>
                     <p>Jeck</p> 
@@ -34,7 +55,14 @@ const Author = () => {
                     <p>Author & Writter</p>
                      
                 </div>
-                <div className='w7w-[300px]0  text-black'> 
+                <div  data-aos="zoom-in"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center" className='w7w-[300px]0  text-black'> 
                     <img src={imageA} className=' rounded-lg h-80' alt="" />
                     <div className=' flex justify-between  items-center text-black text-xl  font-bold'>
                     <p>Jony</p> 

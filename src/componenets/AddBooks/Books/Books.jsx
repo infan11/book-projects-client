@@ -79,8 +79,15 @@ const Books = () => {
      }
     return (
         <div className="">
-          <div className="hero lg:h-[500px] ">
-  <div className="hero-content   flex-col lg:flex-row fromDiv rounded-xl ">
+          <div data-aos="zoom-in"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center" className="hero lg:h-[500px] ">
+  <div className="hero-content   flex-col lg:flex-row fromDivAdd rounded-xl ">
     <img src={image} className="  shadow-2xl fromDivNav" />
     <div>
     <div className="divider"></div>
@@ -91,7 +98,7 @@ const Books = () => {
       <p className="font-bold text-xl text-black">Rating : <span className="text-red-500">⭐{rating}</span></p>
       <p className="font-bold  text-xl  text-black">Price : <span className="text-red-600">${price}</span></p>
    <br /> 
-      <button onClick={handleAddBook} className="btn btn-block btn-outline text-xl text-blue-500  ">Add To Cart</button>
+      <button onClick={handleAddBook} className="btn btn-block btn-outline text-xl text-white font-bold  ">Add To Cart</button>
     </div>
   </div>
 </div>
