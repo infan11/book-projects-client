@@ -13,7 +13,7 @@ import imageE from '../../../assets/patnar/image5.jpg'
 const Patnar = () => {
     
     return (
-        <div className='w-full  hidden lg:block   pt-9  mr-8 p-20 bg-slate-100'>
+        <div className='w-full pt-9  mr-8 p-20 bg-slate-100'>
             <div className= "    ">
               <div>
               <Swiper
@@ -45,13 +45,7 @@ In the quiet corner of the library, my book partner and I immersed ourselves in 
   </div>
 </div></SwiperSlide>
         <SwiperSlide><div data-aos="zoom-in"
-    data-aos-offset="150"
-    data-aos-delay="100"
-    data-aos-duration="900"
-    data-aos-easing="ease-in-out"
-    data-aos-mirror="true"
-    data-aos-once="false"
-    data-aos-anchor-placement="top-center" className="   mt-28 w-96 bg-white fromDivNav rounded-xl relative">
+    className="   mt-28 w-96 bg-white fromDivNav rounded-xl relative">
   <figure><img src={imageB} className='w-[180px] fromDiv  mx-auto border-4 border-blue-700 rounded-full h-44 -top-24 ml-20 absolute'   alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="text-2xl font-bold  mt-6 text-black text-center ">Mohammad Infan </h2>
@@ -103,10 +97,7 @@ In the quiet corner of the library, my book partner and I immersed ourselves in 
 </div></SwiperSlide>
 
 
-        {/* <SwiperSlide><img src={imageB} alt="" /></SwiperSlide>
-        <SwiperSlide><img src={imageC} alt="" /></SwiperSlide>
-        <SwiperSlide><img src={imageD} alt="" /></SwiperSlide>
-        <SwiperSlide><img src={imageE} alt="" /></SwiperSlide> */}
+  
         
       </Swiper>
               </div>

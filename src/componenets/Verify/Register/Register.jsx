@@ -7,11 +7,12 @@ import './regsiter.css'
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import { reload } from 'firebase/auth';
-import axios from 'axios';
 import { imageUpload } from '../../Hooks/utils';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
 
 const Register = () => {
-  const {  createUser ,  updateUserProfile ,  googleUser , githubUser } = useAuth(null);
+  const axiosPublic = useAxiosPublic();
+  const { user,  createUser ,  updateUserProfile ,  googleUser , githubUser } = useAuth(null);
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/"
   const handleSubmit = async event => {
@@ -23,11 +24,7 @@ const Register = () => {
     const photo = form.photo.files[0];
     const imageData=  await imageUpload(photo)
     
-//    catch(error)
-// {
-//   console.log(error)
-// }    // const registerUser = {name , photo, email , password}
-    // console.log(registerUser);
+
 console.log(imageData);
 
 
@@ -42,8 +39,30 @@ console.log(imageData);
       console.log(regsitersUser)
       updateUserProfile(name , imageData?.data?.display_url)
       .then(() => {
-        
-          toast.success("Successfully Register")
+        //from register to database 
+  const usersItem = {
+    name: name ,
+    email : email ,
+    photo:  imageData?.data?.display_url
+  }
+
+        axiosPublic.post("/users" , usersItem )
+        .then(res => {
+        if(res.data.insertedId){
+          toast.success(` Successfully Register  ${name}`, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            
+            });
+        }
+        }) 
+      
         
      })
      
@@ -65,9 +84,30 @@ console.log(imageData);
     .then(result  => {
       const googleAuth = result.user;
       console.log(googleAuth)
-      if(googleAuth){
-        toast.success("Successfully Register")
+      const usersGoogleItem = {
+        email : result.user.email ,
+         name : result.user?.displayName,
+         photo : result.user?.photoURL
+
       }
+     axiosPublic.post("/users" ,usersGoogleItem )
+     .then(res => {
+   
+       if(res.data){
+        toast.success(` Successfully Register  ${result.user?.displayName}`, {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          
+          });
+       }
+      
+     })
       navigate(from , {replace: true})
     })
     .catch(error => {
@@ -86,9 +126,29 @@ console.log(imageData);
     .then(result => {
       const githubAuth = result.user;
       console.log(githubAuth)
-      if(githubAuth){
-        toast.success("Successfully Register")
+      const usersGitHubItem = {
+       
+         name : result.user?.displayName,
+         photo : result.user?.photoURL
+
       }
+      axiosPublic.post("/users" , usersGitHubItem)
+      .then(res => {
+        if(res.data){
+          toast.success(` Successfully Register  ${result.user?.displayName}`, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            
+            });
+        }
+      })
+     
       navigate(from , {replace: true})
     })
     .catch(error => {

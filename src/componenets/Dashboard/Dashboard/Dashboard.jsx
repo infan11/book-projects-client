@@ -8,12 +8,11 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 
 
 const Dashboard = () => {
-
-
+const isAdmin = true;
  
   const navLinks = <>
 
-  <>
+  { isAdmin  ?    <>
         <li>
           <NavLink className={ " hover:bg-blue-500 hover:text-white " } to="/dashboard/adminHome">
             <FaHome></FaHome>
@@ -45,7 +44,7 @@ const Dashboard = () => {
             All Users</NavLink>
         </li>
       </>
-        
+        :
         <>
           <li>
             <NavLink  className={"hover:bg-blue-500 hover:text-white"}  to="/dashboard/userHome">
@@ -74,10 +73,10 @@ const Dashboard = () => {
               Real Payment History</NavLink>
           </li>
         </>
-  
+  }
     {/* shared nav links */}
     <div className="divider"></div>
-    {/* <li>
+    <li>
       <NavLink  className={"hover:bg-blue-500 hover:text-white"} to="/">
         <FaHome></FaHome>
         Home</NavLink>
@@ -91,7 +90,7 @@ const Dashboard = () => {
       <NavLink   className={"hover:bg-blue-500 hover:text-white"} to="/order/contactUs">
         <FaEnvelope></FaEnvelope>
         Contact</NavLink>
-    </li> */}
+    </li>
   </>
   return (
     

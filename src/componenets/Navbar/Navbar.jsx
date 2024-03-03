@@ -5,7 +5,7 @@ import { CiMenuBurger } from "react-icons/ci";
 import { IoIosSearch } from "react-icons/io";
 import useBooks from "../Hooks/useBooks";
 const Navbar = () => {
-  const [bookCart] = useBooks()
+  const [bookCart , refetch] = useBooks()
   const {user , logout } = useAuth()
   const totalPrice =  bookCart.reduce((total , item  )  => total + item.price  , 0 ) 
   const handleLogout = () => {
@@ -117,6 +117,7 @@ BorrowedBooks
      { user ? <>
       <div tabIndex={0} role="button" className="btn btn-ghost   fromDivNavP">
         <div className=" w-10 rounded-full">
+          
         <img  src={user?.photoURL} className="rounded-full w-10 " alt="" />
         </div>
         
@@ -132,7 +133,7 @@ BorrowedBooks
 </NavLink>
      </>
      }
-      <ul tabIndex={0} className="  fromDivNav  menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-80">
+      <ul tabIndex={0} className="  fromDivNav border-3 menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-80">
       <div className=" rounded-full">
         <img  src={user?.photoURL} className="w-20 rounded-full  mx-auto " alt="" />
         </div>
@@ -141,7 +142,7 @@ BorrowedBooks
 
         <li className=" text-xl text-black ">{user?.displayName}</li>
         <div className="divider"></div>
-        <li className=" text-xl text-black ">{user?.email}</li>
+        <li className=" text-xl font-bold text-blue-500 ">{user?.email}</li>
         <div className="divider"></div>
         <li className="text-xl text-black">Your Profile</li>
         <div className="divider"></div>
