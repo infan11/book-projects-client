@@ -69,7 +69,7 @@ BorrowedBooks
     return (
         <div  className="">
             <div data-aos="fade-down"
-     className="navbar    lg:w-full  md:w-80  shadow-2xl lg:px-10">
+     className="navbar lg:w-full  md:w-80  shadow-2xl lg:px-10">
             <div className="navbar ">
             <div className="navbar ">
     <div className="dropdown">
@@ -142,7 +142,7 @@ BorrowedBooks
 
         <li className=" text-xl text-black ">{user?.displayName}</li>
         <div className="divider"></div>
-        <li className=" text-xl font-bold text-blue-500 ">{user?.email}</li>
+        <li className=" text-[12px] font-bold text-blue-500 ">{user?.email}</li>
         <div className="divider"></div>
         <li className="text-xl text-black">Your Profile</li>
         <div className="divider"></div>

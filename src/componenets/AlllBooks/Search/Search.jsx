@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import useBooks from '../../Hooks/useBooks';
+import { Link } from 'react-router-dom';
 
 const Search = () => {
   const [alertShown, setAlertShown] = useState(false);
@@ -32,6 +33,7 @@ const Search = () => {
   };
 
   return (
+   <Link to={"/allBooks"}>
     <div className="max-w-7xl mx-auto  ">
       <input 
         type="text"
@@ -69,6 +71,7 @@ const Search = () => {
         </div>
       )}
     </div>
+  </Link>
   );
 };
 
