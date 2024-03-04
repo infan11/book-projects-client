@@ -13,6 +13,7 @@ import Books from "../componenets/AddBooks/Books/Books";
 import MyCart from "../componenets/Dashboard/MyCart/MyCart";
 import Dashboard from "../componenets/Dashboard/Dashboard/Dashboard";
 import AdminHome from "../componenets/Dashboard/AdminHome/AdminHome";
+import Allusers from "../componenets/Dashboard/Allusers/Allusers";
 
 export   const router = createBrowserRouter([
     {
@@ -64,6 +65,8 @@ export   const router = createBrowserRouter([
           path : "/dashboard/cart",
           element: <MyCart></MyCart>
         },
+        // admin routes only 
+
         {
           path: "/dashboard/adminHome",
           element :<AdminHome></AdminHome>
@@ -83,6 +86,10 @@ export   const router = createBrowserRouter([
         {
           path: "/dashboard/paymentHistory",
           element :<AdminHome></AdminHome>
+        }, 
+        {
+         path : "/dashboard/users",
+         element : <Allusers></Allusers>
         }
       ]
     }
