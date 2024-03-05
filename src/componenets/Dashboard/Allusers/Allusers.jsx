@@ -10,7 +10,12 @@ const Allusers = () => {
    const  [ users  , refetch] = useAdmin();
    const axiosSecure = useAxiosSecure();
   const [bookCart] = useBooks();
-  const handleDelated = id => {
+
+  const handleMakeAdmin = user =>  {
+   
+  }
+  // deleted user
+  const handleDelated = user => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -21,7 +26,7 @@ const Allusers = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-     axiosSecure.delete(`/users/${id}`)
+     axiosSecure.delete(`/users/${user._id}`)
      .then(res => {
       console.log(res.data);
       if(res.data.deletedCount > 0){
@@ -58,11 +63,11 @@ const Allusers = () => {
       <tr >
         <th></th>
         <th ></th>
-        <th className="text-purple-500  text-xl">Name</th>
-        <th className="text-purple-500  text-xl">Email </th>
-        <th className="text-purple-500  text-xl">Action</th>
-        <th className="text-purple-500  text-xl">Details</th>
-        <th className="text-purple-500  text-xl">Menage</th>
+        <th className="text-black font-bold text-xl">Name</th>
+        <th className="text-black font-bold text-xl">Email </th>
+        <th className="text-black font-bold text-xl">Role</th>
+        <th className="text-black font-bold text-xl">Details</th>
+        <th className="text-black font-bold text-xl">Action</th>
         
       </tr>
     </thead>
@@ -74,10 +79,11 @@ const Allusers = () => {
            <td><img src={user.photo}  className="w-16 rounded-lg  fromDivNavP" alt="" /></td> 
             <td > {user.name}</td>
             <td>{user.email}</td>
-            <td><button className="text-2xl fromDiv"><RiAdminFill />
+            <td><button className="text-2xl fromDiv" onClick={() => handleMakeAdmin(user)}><RiAdminFill />
 </button> </td>
             <td> {/* The button to open modal */}
-<label htmlFor="my_modal_6" className="fromDivNav">Details</label>
+   <div>
+   <label htmlFor="my_modal_6" className="fromDivNav">Details</label>
 
 {/* Put this part before </body> tag */}
 <input type="checkbox" id="my_modal_6" className="modal-toggle" />
@@ -87,17 +93,19 @@ const Allusers = () => {
       <label htmlFor="my_modal_6" className="fromDiv"><GiTireIronCross /></label>
     </div>
     <div className="justify-center items-center">
-      <img src={user.photo} className="rounded-md fromDivNav" alt="" />
+      <img src={user.photo} className="rounded-md fromDivNavP" alt="" />
     </div>
     <p className="py-2">User Name : {user.name}</p>
     <p className="py-2">Total Order : {user.email}</p>
     <p className="py-2">Total Order :{bookCart.length}</p>
    
   </div>
-</div></td>
+</div>
+   </div>
+</td>
             <td>
               
-              <button className="fromDivNav" onClick={() =>  handleDelated (user._id)}><MdDeleteOutline></MdDeleteOutline></button>
+              <button className="fromDivNav" onClick={() =>  handleDelated (user)}><MdDeleteOutline></MdDeleteOutline></button>
                 </td>
           </tr>
      )
