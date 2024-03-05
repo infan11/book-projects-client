@@ -1,10 +1,48 @@
+import Swal from "sweetalert2";
 import useAdmin from "../../Hooks/useAdmin";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { MdDeleteOutline } from "react-icons/md";
-
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { toast } from "react-toastify";
+import useBooks from "../../Hooks/useBooks";
+import { GiTireIronCross } from "react-icons/gi";
+import { RiAdminFill } from "react-icons/ri";
 const Allusers = () => {
-   const  [ users ] = useAdmin();
-
+   const  [ users  , refetch] = useAdmin();
+   const axiosSecure = useAxiosSecure();
+  const [bookCart] = useBooks();
+  const handleDelated = id => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+     axiosSecure.delete(`/users/${id}`)
+     .then(res => {
+      console.log(res.data);
+      if(res.data.deletedCount > 0){
+        refetch();
+        toast.success(" Successfully Deleted " , {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          
+          });
+     
+      }
+     })
+      }
+    });
+  }
 
     return (
         <div>
@@ -19,12 +57,12 @@ const Allusers = () => {
     <thead>
       <tr >
         <th></th>
-        <th className="">Image</th>
-        <th>Name</th>
-        <th>Email </th>
-        <th>Action</th>
-        <th>Details</th>
-        <th>Menage</th>
+        <th ></th>
+        <th className="text-purple-500  text-xl">Name</th>
+        <th className="text-purple-500  text-xl">Email </th>
+        <th className="text-purple-500  text-xl">Action</th>
+        <th className="text-purple-500  text-xl">Details</th>
+        <th className="text-purple-500  text-xl">Menage</th>
         
       </tr>
     </thead>
@@ -34,11 +72,33 @@ const Allusers = () => {
         users.map((user , index) =>   <tr>
             <th>{index+1}</th>
            <td><img src={user.photo}  className="w-16 rounded-lg  fromDivNavP" alt="" /></td> 
-            <td>{user.name}</td>
+            <td > {user.name}</td>
             <td>{user.email}</td>
-            <td>Admin </td>
-            <td> details </td>
-            <td>  </td>
+            <td><button className="text-2xl fromDiv"><RiAdminFill />
+</button> </td>
+            <td> {/* The button to open modal */}
+<label htmlFor="my_modal_6" className="fromDivNav">Details</label>
+
+{/* Put this part before </body> tag */}
+<input type="checkbox" id="my_modal_6" className="modal-toggle" />
+<div className="modal " role="dialog">
+  <div className="modal-box  fromDivNav">
+  <div className="modal-action">
+      <label htmlFor="my_modal_6" className="fromDiv"><GiTireIronCross /></label>
+    </div>
+    <div className="justify-center items-center">
+      <img src={user.photo} className="rounded-md fromDivNav" alt="" />
+    </div>
+    <p className="py-2">User Name : {user.name}</p>
+    <p className="py-2">Total Order : {user.email}</p>
+    <p className="py-2">Total Order :{bookCart.length}</p>
+   
+  </div>
+</div></td>
+            <td>
+              
+              <button className="fromDivNav" onClick={() =>  handleDelated (user._id)}><MdDeleteOutline></MdDeleteOutline></button>
+                </td>
           </tr>
      )
      }

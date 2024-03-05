@@ -7,8 +7,11 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { toast } from "react-toastify";
 import useBooks from "../../Hooks/useBooks";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+
 
 const Books = () => {
+
     const {id} = useParams();
     console.log(id);
     const [books , setBooks] = useState([]);
@@ -17,6 +20,7 @@ const Books = () => {
         .then(res => res.json())
         .then(data => setBooks(data))
     }, [])
+
     const axiosSecure  = useAxiosSecure();
   const [,  refetch] = useBooks();
     const { _id ,  image , name , author ,quantity,    rating , category , price } = books;
