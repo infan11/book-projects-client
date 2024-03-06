@@ -12,7 +12,24 @@ const Allusers = () => {
   const [bookCart] = useBooks();
 
   const handleMakeAdmin = user =>  {
-   
+   axiosSecure.patch(`/users/admin/${user._id}`)
+   .then(res => {
+    console.log(res.data);
+    if(res.data.modifiedCount > 0){
+      refetch();
+      toast.success(` Successfully Admin ` , {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        
+        });
+    }
+   })
   }
   // deleted user
   const handleDelated = user => {
@@ -79,8 +96,13 @@ const Allusers = () => {
            <td><img src={user.photo}  className="w-16 rounded-lg  fromDivNavP" alt="" /></td> 
             <td > {user.name}</td>
             <td>{user.email}</td>
-            <td><button className="text-2xl fromDiv" onClick={() => handleMakeAdmin(user)}><RiAdminFill />
-</button> </td>
+            <td>
+              
+            {user.role === "admin" ? "Admin" : (
+  <button className="text-2xl fromDiv" onClick={() => handleMakeAdmin(user)}>
+    <RiAdminFill />
+  </button>
+)}</td>
             <td> {/* The button to open modal */}
    <div>
    <label htmlFor="my_modal_6" className="fromDivNav">Details</label>

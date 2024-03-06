@@ -11,7 +11,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 
 const Books = () => {
-
+  const axiosPublic = useAxiosPublic()
     const {id} = useParams();
     console.log(id);
     const [books , setBooks] = useState([]);
