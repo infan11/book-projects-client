@@ -12,21 +12,66 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const Books = () => {
   const axiosPublic = useAxiosPublic()
+  const axiosSecure  = useAxiosSecure();
+  const [,  refetch] = useBooks();
+  const navigate = useNavigate();
+  const {user} = useAuth();
+  const location = useLocation();
+
     const {id} = useParams();
     console.log(id)
+
     const [books , setBooks] = useState([]);
     useEffect(() => {
         fetch(`http://localhost:5000/books/${id}`)
         .then(res => res.json())
         .then(data => setBooks(data))
     }, [])
+    // book Deleted
+const handleDeletd = ()=> {
+     axiosSecure.delete(`/books/${id}`)
+     .then(res=> {
+      console.log(res.data);
+      if(res.data.deletedCount > 0){
+        refetch()
+        toast.success(` Successfully Add ${name}`, {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          
+          });
+        
+      }
+      
+     })
+     .catch(error => {
+      if(error){
+        toast.error(` Already Deleted ${name}`, {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          
+          });
+      }
+     })
+     navigate("/allBooks" , {state : {from : location }} )
+     }
 
-    const axiosSecure  = useAxiosSecure();
-  const [,  refetch] = useBooks();
+
+    
+     // add to cart book 
     const { _id ,  image , name , author ,quantity,    rating , category , price } = books;
-    const {user} = useAuth();
-    const location = useLocation();
-    const navigate = useNavigate();
+ 
      const handleAddBook = () =>{
      
       if(user && user.email){
@@ -81,6 +126,7 @@ const Books = () => {
         });
       }
      }
+     
     return (
         <div className="">
           <div data-aos="zoom-in"
@@ -103,6 +149,7 @@ const Books = () => {
       <p className="font-bold  text-xl  text-black">Price : <span className="text-red-600">${price}</span></p>
    <br /> 
       <button onClick={handleAddBook} className="btn btn-block btn-outline text-xl text-white font-bold  ">Add To Cart</button>
+      <button onClick={ handleDeletd} className="btn btn-block btn-outline text-xl text-white font-bold  ">Delete</button>
     </div>
   </div>
 </div>
