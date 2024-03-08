@@ -13,7 +13,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 const Books = () => {
   const axiosPublic = useAxiosPublic()
     const {id} = useParams();
-    console.log(id);
+    console.log(id)
     const [books , setBooks] = useState([]);
     useEffect(() => {
         fetch(`http://localhost:5000/books/${id}`)

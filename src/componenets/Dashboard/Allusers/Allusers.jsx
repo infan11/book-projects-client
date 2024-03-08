@@ -8,6 +8,7 @@ import { GiTireIronCross } from "react-icons/gi";
 import { RiAdminFill } from "react-icons/ri";
 const Allusers = () => {
    const  [ users  , refetch] = useAdmin();
+   console.log(users);
    const axiosSecure = useAxiosSecure();
   const [bookCart] = useBooks();
 

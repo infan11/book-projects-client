@@ -3,32 +3,36 @@ import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { imageUpload } from "../../Hooks/utils";
 
 const AddBooks = () => {
   const axiosSecure = useAxiosSecure();
   const {user} = useAuth();
-  const handleAddBooks = event => {
+  const handleAddBooks = async event => {
     if(user && user.email){
       event.preventDefault();
       const form = event.target;
-      const image = form.image.value;
       const name =  form.name.value;
       const quantity = form.quantity.value;
       const author = form.author.value;
       const shortdescription = form.shortdescription.value;
       const rating = form.rating.value;
+      const category = form.category.value;
       const price = form.price.value;
-  
+      const image = form.image.files[0];
+     const imageData = await imageUpload(image)
+     console.log(imageData);
     const booksItem = {
       // booksId : _id,
       email :user.email ,
-      image ,
+      image :imageData?.data?.display_url , 
       name,
       quantity,
       author,
       shortdescription,
       rating,
       price ,
+      category
       
     }
     
@@ -50,13 +54,7 @@ const AddBooks = () => {
 }
     return (
         <div data-aos="zoom-in"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="true"
-        data-aos-once="false"
-        data-aos-anchor-placement="top-center" className="max-w-7xl mx-auto"> 
+     className="max-w-7xl mx-auto"> 
         <h2 className="text-center  font-bold text-black text-2xl mt-3">ADD YOUR BOOKS</h2>
            <form onSubmit={handleAddBooks} className="card-body">
             {/* start name and image */}
@@ -65,13 +63,13 @@ const AddBooks = () => {
           <label className="label">
             <span className="label-text font-bold text-black">Image</span>
           </label>
-          <input type="text" name="image"  placeholder="http://photo.com" className="input input-bordered" required />
+          <input type="file" name='image' accept='image/*' className=" fromDiv p-3 border text-black    font-bold  " />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text font-bold text-black">Name</span>
           </label>
-          <input type="text" placeholder="Book Name" name="name" className="input input-bordered" required />
+          <input type="text" placeholder="Book Name" name="name" className="fromDiv p-3 border text-black    font-bold" required />
         </div>
         
       </div>
@@ -82,14 +80,14 @@ const AddBooks = () => {
           <label className="label">
             <span className="label-text font-bold text-black">Quantity of the book</span>
           </label>
-          <input type="text" name="quantity" placeholder="Quantity of the book" className="input input-bordered" required />
+          <input type="text" name="quantity" placeholder="Quantity of the book" className="fromDiv p-3 border text-black    font-bold" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text font-bold text-black">Author Name
 </span>
           </label>
-          <input type="text" placeholder="Author Name" name="author" className="input input-bordered" required />
+          <input type="text" placeholder="Author Name" name="author" className="fromDiv p-3 border text-black    font-bold" required />
         </div>
         
       </div>
@@ -101,7 +99,7 @@ const AddBooks = () => {
             <span className="label-text font-bold text-black">Category (for example - Novel, Thriller, History, Drama, Sci-Fi, etc.)</span>
           </label>
           {/* <input type="text"  /> */}
-  <select name="category" placeholder="Category" defaultValue={"category"} className="input input-bordered" required>
+  <select name="category" placeholder="Category" defaultValue={"category"} className="fromDiv p-3 border text-black    font-bold" required>
     <option value={"category"}>Category</option>
     <option value={"Novel"}>Novel</option>
     <option value={"Thriller"}>Thriller</option>
@@ -117,7 +115,7 @@ const AddBooks = () => {
 </span>
           </label>
           <input type="text" name="shortdescription" placeholder="Short description
-" className="input input-bordered" required />
+" className="fromDiv p-3 border text-black    font-bold" required />
         </div>
         
       </div>
@@ -129,13 +127,13 @@ const AddBooks = () => {
           <label className="label">
             <span className="label-text font-bold text-black">Rating</span>
           </label>
-          <input type="text" name="rating" placeholder="Rating" className="input input-bordered" required />
+          <input type="text" name="rating" placeholder="Rating" className="fromDiv p-3 border text-black    font-bold" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text font-bold text-black">Price</span>
           </label>
-          <input type="text" placeholder="$200" name="price" className="input input-bordered" required />
+          <input type="text" placeholder="$200" name="price" className="fromDiv p-3 border text-black    font-bold" required />
         </div>
         
       </div>
@@ -143,7 +141,7 @@ const AddBooks = () => {
 
 
         <div className="form-control mt-6">
-          <button className="btn btn-primary bg-blue-500 font-bold text-xl text-white">ADD </button>
+          <button className="btn btn-outline  bg-blue-500 text-white formInput p-3 border    font-bold">ADDBOOK </button>
         </div>
       </form>
            
