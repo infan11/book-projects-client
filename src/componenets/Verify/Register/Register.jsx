@@ -167,7 +167,7 @@ console.log(imageData);
          <div className="hero min-h-screen max-w-full mx-auto">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center hidden lg:block lg:text-left ">
-       <img src={image} className=' imageR ml-14 w-[700px]   ' alt="" />
+       <img src={image} className=' imageR ml-14 w-[680px]   ' alt="" />
     </div>
     <div className=" fromDiv rounded-lg  md:w-96 md:px-8  lg:w-ful  bg-white ">
     <p className='text-[15px] text-center' > You Have An Account ? Now <Link className='text-blue-400 font-bold' to={"/login"}>SignIn</Link></p>
