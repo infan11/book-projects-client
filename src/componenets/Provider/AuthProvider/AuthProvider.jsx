@@ -47,20 +47,17 @@ useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth , currentUser =>{
         setUser(currentUser);
         if(currentUser){
-            // get token store cilent  
-            const userInfo = {email : currentUser.email}
-            axiosPublic.post("/jwt" ,  userInfo )
-            .then(res =>{
-                console.log(res.data);
-                if(res.data.token){
-                    localStorage.setItem("Access-Token" , res.data.token)
-                }
-            })
-            
+            const userInfo = { email : currentUser.email}
+        axiosPublic.post("/jwt" , userInfo)
+        .then(res => {
+            if(res.data.token){
+                localStorage.setItem("access-token" , res.data.token)
+            }
+        })
         }
         else{
-            // TODO: remove  token (if token stored in the client  side locaStorage , cashing , in memeory )
-                  localStorage.removeItem("Access-Token" , res.data.token)
+            // eta use korle token auto matice remove hobe 
+            localStorage.removeItem("access-token")
         }
         setLoading(false)
     })

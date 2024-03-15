@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosPublic = axios.create({
-    baseURL: "https://book-projects-server-qemx.vercel.app"
+    baseURL: "http://localhost:5000"
 })
 const useAxiosPublic = () => {
     return axiosPublic;
