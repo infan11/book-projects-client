@@ -4,11 +4,12 @@ import { FaBook, FaCalendar, FaEnvelope, FaList,  FaPhone,  FaUsers, FaUtensils 
 
 
 import { Link, NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../../Hooks/useAdmin";
 
 
 
 const Dashboard = () => {
-const isAdmin = true;
+const [ isAdmin ] = useAdmin();
  
   const navLinks = <>
 

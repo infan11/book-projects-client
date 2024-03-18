@@ -1,13 +1,13 @@
 import Swal from "sweetalert2";
-import useAdmin from "../../Hooks/useAdmin";
 import { MdDeleteOutline } from "react-icons/md";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { toast } from "react-toastify";
 import useBooks from "../../Hooks/useBooks";
 import { GiTireIronCross } from "react-icons/gi";
 import { RiAdminFill } from "react-icons/ri";
+import useUser from "../../Hooks/useUser";
 const Allusers = () => {
-   const  [ users  , refetch] = useAdmin();
+   const  [ users  , refetch] = useUser();
    console.log(users);
    const axiosSecure = useAxiosSecure();
   const [bookCart] = useBooks();
