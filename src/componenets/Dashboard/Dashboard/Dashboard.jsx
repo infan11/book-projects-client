@@ -10,6 +10,7 @@ import useAdmin from "../../Hooks/useAdmin";
 
 const Dashboard = () => {
 const [ isAdmin ] = useAdmin();
+console.log(isAdmin);
  
   const navLinks = <>
 
