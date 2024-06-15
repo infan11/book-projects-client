@@ -14,12 +14,13 @@ import MyCart from "../componenets/Dashboard/MyCart/MyCart";
 import Dashboard from "../componenets/Dashboard/Dashboard/Dashboard";
 import AdminHome from "../componenets/Dashboard/AdminHome/AdminHome";
 import Allusers from "../componenets/Dashboard/Allusers/Allusers";
+import ErrorPage from "../componenets/ErrorPage/ErrorPage";
 
 export   const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
-      // TODO : Error Element
+     errorElement : <ErrorPage></ErrorPage>,
       children: [
         {
             path: "/",
