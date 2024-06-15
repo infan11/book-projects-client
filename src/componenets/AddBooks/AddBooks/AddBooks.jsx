@@ -133,7 +133,7 @@ const AddBooks = () => {
           <label className="label">
             <span className="label-text font-bold text-black">Price</span>
           </label>
-          <input type="text" placeholder="$200" name="price" className="fromDiv p-3 border text-black    font-bold" required />
+          <input type="text" placeholder="$000" name="price" className="fromDiv p-3 border text-black    font-bold" required />
         </div>
         
       </div>

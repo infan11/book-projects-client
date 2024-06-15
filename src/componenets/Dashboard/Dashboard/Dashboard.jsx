@@ -4,17 +4,17 @@ import { FaBook, FaCalendar, FaEnvelope, FaList,  FaPhone,  FaUsers, FaUtensils 
 
 
 import { Link, NavLink, Outlet } from "react-router-dom";
-import useAdmin from "../../Hooks/useAdmin";
+import useAuth from "../../Hooks/useAuth";
+
 
 
 
 const Dashboard = () => {
-const [ isAdmin ] = useAdmin();
-console.log(isAdmin);
+const {user} = useAuth()
  
   const navLinks = <>
 
-  { isAdmin  ?    <>
+  { user  ?    <>
         <li>
           <NavLink className={ " hover:bg-blue-500 hover:text-white " } to="/dashboard/adminHome">
             <FaHome></FaHome>

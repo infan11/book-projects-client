@@ -3,14 +3,14 @@ import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import useBooks from '../../Hooks/useBooks';
 import { MdDeleteOutline } from 'react-icons/md';
 import Swal from 'sweetalert2';
-import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const MyCart = () => {
     const [bookCart , refetch] = useBooks();
     const axiosSecure = useAxiosSecure();
    
-    const totalPrice =  bookCart.reduce((total , item  )  => total + item.price  , 0 ) 
+ 
+    const totalPrice = bookCart.reduce((total , item) => total + item.price , 0) 
      const handleDeleted = id => {
       Swal.fire({
         title: "Are you sure?",

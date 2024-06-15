@@ -12,26 +12,7 @@ const Allusers = () => {
    const axiosSecure = useAxiosSecure();
   const [bookCart] = useBooks();
 
-  const handleMakeAdmin = user =>  {
-   axiosSecure.patch(`/users/admin/${user._id}`)
-   .then(res => {
-    console.log(res.data);
-    if(res.data.modifiedCount > 0){
-      refetch();
-      toast.success(` Successfully Admin ` , {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        
-        });
-    }
-   })
-  }
+ 
   // deleted user
   const handleDelated = user => {
     Swal.fire({
@@ -99,11 +80,7 @@ const Allusers = () => {
             <td>{user.email}</td>
             <td>
               
-            {user.role === "admin" ? "Admin" : (
-  <button className="text-2xl fromDiv" onClick={() => handleMakeAdmin(user)}>
-    <RiAdminFill />
-  </button>
-)}</td>
+ </td>
             <td> {/* The button to open modal */}
    <div>
    <label htmlFor="my_modal_6" className="fromDivNav">Details</label>

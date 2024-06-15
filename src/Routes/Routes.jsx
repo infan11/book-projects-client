@@ -27,7 +27,7 @@ export   const router = createBrowserRouter([
         },
         {
             path: "/addBooks",
-            element: <PrivateRoutes><AddBooks></AddBooks></PrivateRoutes>
+            element: <AddBooks></AddBooks>
         },
         {
             path: "/allBooks",
